@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter/core/footer.dart';
-import 'package:portfolio_flutter/core/theme/colors.dart';
-import 'package:portfolio_flutter/core/theme/typography.dart';
+
 import 'package:portfolio_flutter/features/bcc/presentation/widgets/big_picture.dart';
 import 'package:portfolio_flutter/features/bcc/presentation/widgets/cohesive_solutions_1.dart';
 import 'package:portfolio_flutter/features/bcc/presentation/widgets/cohesive_solutions_2.dart';

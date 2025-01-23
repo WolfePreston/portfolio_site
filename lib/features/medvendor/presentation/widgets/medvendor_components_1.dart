@@ -32,6 +32,7 @@ class MedvendorComponents1 extends StatelessWidget {
                       'components',
                       style: TextStyle(
                         fontSize: MediaQuery.of(context).size.width * .2,
+                        // ignore: deprecated_member_use
                         color: Colors.white.withOpacity(0.2),
                         fontWeight: FontWeight.bold,
                       ),

@@ -31,6 +31,7 @@ class CohesiveSolutions1 extends StatelessWidget {
                       '1',
                       style: TextStyle(
                         fontSize: MediaQuery.of(context).size.width * .2,
+                        // ignore: deprecated_member_use
                         color: Colors.white.withOpacity(0.1),
                         fontWeight: FontWeight.bold,
                       ),

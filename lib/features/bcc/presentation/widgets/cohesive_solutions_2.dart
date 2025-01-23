@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter/core/theme/colors.dart';
 import 'package:portfolio_flutter/core/theme/typography.dart';

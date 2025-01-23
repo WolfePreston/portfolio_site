@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:portfolio_flutter/gen/assets.gen.dart';
 
 class CarouselItem {

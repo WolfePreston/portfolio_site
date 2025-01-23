@@ -32,6 +32,7 @@ class MedvendorComponents2 extends StatelessWidget {
                       'Coverage',
                       style: TextStyle(
                         fontSize: MediaQuery.of(context).size.width * .11,
+                        // ignore: deprecated_member_use
                         color: Colors.white.withOpacity(0.2),
                         fontWeight: FontWeight.bold,
                       ),

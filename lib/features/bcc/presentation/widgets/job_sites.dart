@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:portfolio_flutter/core/theme/colors.dart';
 import 'package:portfolio_flutter/core/theme/typography.dart';
 import 'package:portfolio_flutter/gen/assets.gen.dart';
