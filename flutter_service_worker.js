@@ -3,9 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "e7d045e47c5a8ffb26b2ebdb4c283912",
-"assets/AssetManifest.bin.json": "8c81c92ccb102a02417436d7a9a7adf7",
-"assets/AssetManifest.json": "907db32d11c8e137efc76459cdc63f9d",
+const RESOURCES = {"assets/AssetManifest.bin": "a4a7792fd39861d1b5ad64d5a1d954c3",
+"assets/AssetManifest.bin.json": "2df41de384f47a5c997543c8811b83fa",
+"assets/AssetManifest.json": "86449767705a7f01a6955078fae5edfa",
 "assets/assets/images/bcc_truck.json": "0be6cf7b5e3df6b78716fd3bc8a5f37c",
 "assets/assets/images/bigcreek/addTask.png": "b1a4541c9a26625509937514e1f7d7e3",
 "assets/assets/images/bigcreek/addTaskAGC.png": "f64adf654ce39bd10fd0264898f404a5",
@@ -14,7 +14,6 @@ const RESOURCES = {"assets/AssetManifest.bin": "e7d045e47c5a8ffb26b2ebdb4c283912
 "assets/assets/images/bigcreek/downloading_jobsite.png": "ad5c3d8e9cfaf64b83496771f89d7cc5",
 "assets/assets/images/bigcreek/employee_card.png": "4060008af05279f1ad1518cc4c6311e2",
 "assets/assets/images/bigcreek/homescreen.png": "3eddc0c749effeed83da025d07b7a970",
-"assets/assets/images/bigcreek/icon.png": "2f253c50d059bc92e6631e51bba040f8",
 "assets/assets/images/bigcreek/Job%2520Site%2520Details.png": "27588e2172d023cc4f53cf7256ffda75",
 "assets/assets/images/bigcreek/jobSiteAdded.png": "3e0e709aa539547450a55414604d08a5",
 "assets/assets/images/bigcreek/jobSitesForceDownload.png": "6e3646c6aea25af388f57cde730df18e",
@@ -27,6 +26,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "e7d045e47c5a8ffb26b2ebdb4c283912
 "assets/assets/images/DFR.jpg": "93d82b56a53c46ec8330ccea34ef4604",
 "assets/assets/images/digging%2520bone%2520up.json": "408a55590087b9acaf3560c335e81c04",
 "assets/assets/images/Diving.jpg": "2d6f3d3c24258bf568107b62742931ee",
+"assets/assets/images/icon.png": "2f253c50d059bc92e6631e51bba040f8",
 "assets/assets/images/jethro.json": "8ab124eba4e7863152a5281d893b7419",
 "assets/assets/images/jethro1.json": "8ab124eba4e7863152a5281d893b7419",
 "assets/assets/images/linkedin.png": "1a9291b12d642cb2fa8aa8fbef5c7be1",
@@ -73,14 +73,14 @@ const RESOURCES = {"assets/AssetManifest.bin": "e7d045e47c5a8ffb26b2ebdb4c283912
 "canvaskit/skwasm.worker.js": "89990e8c92bcb123999aa81f7e203b1c",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "flutter.js": "4b2350e14c6650ba82871f60906437ea",
-"flutter_bootstrap.js": "d82c01a6ef5534ca9e25f0dfeaa96fb2",
+"flutter_bootstrap.js": "5f97bda6534b68f376d364d2fe9288d9",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "a2deff23a3893dad4ec2356f58362cef",
-"/": "a2deff23a3893dad4ec2356f58362cef",
-"main.dart.js": "7be756719c934e80650011b8f3f5e5e8",
+"index.html": "b028b4d1ed28a8c93a915c44ab703526",
+"/": "b028b4d1ed28a8c93a915c44ab703526",
+"main.dart.js": "6f4d9c70a63c372f6038f8c41a9e6a16",
 "manifest.json": "75ddf561701309cd388dc71fbe615148",
 "version.json": "7804eb643eb875d188221832d4ff86c5"};
 // The application shell files that are downloaded before a service worker can
