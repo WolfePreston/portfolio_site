@@ -5,7 +5,7 @@ class Appcolors {
   static const Color transparentPrimary = Color.fromARGB(50, 49, 88, 35);
   static const Color white = Color.fromARGB(255, 255, 255, 255);
   static const Color offWhite = Color.fromARGB(255, 246, 246, 246);
-  static const Color lightGrey = Color.fromARGB(255, 200, 200, 200);
+  static const Color lightGrey = Color.fromARGB(100, 200, 200, 200);
   static const Color darkText = Color.fromARGB(255, 62, 62, 62);
   static const Color medvendorprimary = Color.fromARGB(255, 0, 182, 148);
   static const Color medvendornavy = Color.fromARGB(255, 35, 51, 77);

@@ -1,193 +1,83 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import 'package:portfolio_flutter/core/footer.dart';
+import 'package:portfolio_flutter/core/utils/widgets/footer.dart';
 import 'package:portfolio_flutter/core/theme/colors.dart';
 import 'package:portfolio_flutter/core/theme/typography.dart';
+import 'package:portfolio_flutter/features/for_fun/presentation/widgets/lottie_container.dart';
+import 'package:portfolio_flutter/features/for_fun/presentation/widgets/title_divider.dart';
 import 'package:portfolio_flutter/gen/assets.gen.dart';
 
-class ForFunPage extends StatelessWidget {
+class ForFunPage extends StatefulWidget {
   const ForFunPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      bool isSmallScreen = constraints.maxWidth < 870;
+  State<ForFunPage> createState() => _ForFunPageState();
+}
 
-      return SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                'MedVendor',
-                style:
-                    AppTypography.s24w600.copyWith(color: Appcolors.darkText),
+class _ForFunPageState extends State<ForFunPage> with TickerProviderStateMixin {
+  late List<AnimationController> controllers;
+  int? activeAnimationIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              TitleDivider(
+                title: 'MedVendor',
+                subtitle: 'Loading and intro animations',
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: Text(
-                'Loading and intro animations',
-                style:
-                    AppTypography.s14w400.copyWith(color: Appcolors.darkText),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    clipBehavior: Clip.hardEdge,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      border: Border.all(
-                        color: Appcolors.medvendorprimary,
-                        width: 2,
-                      ),
-                    ),
-                    padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                    child: Lottie.asset(
-                      Assets.images.medvendorNoOutline,
-                      height: isSmallScreen ? 200 : 350,
-                      width: isSmallScreen ? 200 : 350,
-                    ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  LottieContainer(
+                    asset: Assets.images.medvendorNoOutline,
+                    borderColor: Appcolors.medvendorprimary,
+                    index: 0,
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    clipBehavior: Clip.hardEdge,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      border: Border.all(
-                        color: Appcolors.medvendorprimary,
-                        width: 2,
-                      ),
-                    ),
-                    child: Lottie.asset(
-                      Assets.images.medvendor2,
-                      height: isSmallScreen ? 200 : 350,
-                      width: isSmallScreen ? 200 : 350,
-                    ),
+                  LottieContainer(
+                    asset: Assets.images.medvendor2,
+                    borderColor: Appcolors.medvendorprimary,
+                    index: 1,
                   ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                'Jethro',
-                style:
-                    AppTypography.s24w600.copyWith(color: Appcolors.darkText),
+                ],
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: Text(
-                'Lottie animations',
-                style:
-                    AppTypography.s14w400.copyWith(color: Appcolors.darkText),
+              TitleDivider(
+                title: 'Jethro',
+                subtitle: 'Lottie animations',
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    clipBehavior: Clip.hardEdge,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      border: Border.all(
-                        color: Appcolors.jethro,
-                        width: 2,
-                      ),
-                    ),
-                    child: Lottie.asset(
-                      Assets.images.jethro1,
-                      height: isSmallScreen ? 200 : 350,
-                      width: isSmallScreen ? 200 : 350,
-                    ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  LottieContainer(
+                    asset: Assets.images.jethro1,
+                    borderColor: Appcolors.jethro,
+                    index: 2,
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    clipBehavior: Clip.hardEdge,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      border: Border.all(
-                        color: Appcolors.jethro,
-                        width: 2,
-                      ),
-                    ),
-                    child: Lottie.asset(
-                      alignment: AlignmentDirectional(0, 1),
-                      Assets.images.diggingBoneUp,
-                      height: isSmallScreen ? 200 : 350,
-                      width: isSmallScreen ? 200 : 350,
-                    ),
+                  LottieContainer(
+                    asset: Assets.images.diggingBoneUp,
+                    borderColor: Appcolors.jethro,
+                    index: 3,
                   ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                'Big Creek Construction',
-                style:
-                    AppTypography.s24w600.copyWith(color: Appcolors.darkText),
+                ],
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: Text(
-                'Loading animations',
-                style:
-                    AppTypography.s14w400.copyWith(color: Appcolors.darkText),
+              TitleDivider(
+                title: 'Big Creek Construction',
+                subtitle: 'Loading animations',
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    clipBehavior: Clip.hardEdge,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      border: Border.all(
-                        color: Appcolors.darkText,
-                        width: 2,
-                      ),
-                    ),
-                    padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                    child: Lottie.asset(
-                      Assets.images.bccTruck,
-                      height: isSmallScreen ? 200 : 350,
-                      width: isSmallScreen ? 200 : 350,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            CustomFooter()
-          ],
-        ),
-      );
-    });
+              LottieContainer(
+                asset: Assets.images.bccTruck,
+                borderColor: Appcolors.darkText,
+                index: 4,
+              ),
+              const CustomFooter(),
+            ],
+          ),
+        );
+      },
+    );
   }
 }

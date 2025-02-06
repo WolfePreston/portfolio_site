@@ -39,6 +39,7 @@ dependencies:
   go_router: ^14.6.3
   url_launcher: ^6.3.1
   lottie: ^3.3.1
+  logger: ^2.5.0
 
 dev_dependencies:
   flutter_test:
@@ -67,8 +68,7 @@ flutter:
     - assets/images/
     - assets/images/bigcreek/
     - assets/images/medvendor/
-    - assets/images/bridgecare/
-    - assets/images/wellspharmacy/
+    - assets/images/skills/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

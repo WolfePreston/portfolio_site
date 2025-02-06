@@ -28,12 +28,11 @@ class $AssetsImagesGen {
   AssetGenImage get bigcreekmockup =>
       const AssetGenImage('assets/images/bigcreekmockup.png');
 
-  /// Directory path: assets/images/bridgecare
-  $AssetsImagesBridgecareGen get bridgecare =>
-      const $AssetsImagesBridgecareGen();
-
   /// File path: assets/images/digging bone up.json
   String get diggingBoneUp => 'assets/images/digging bone up.json';
+
+  /// File path: assets/images/icon.png
+  AssetGenImage get icon => const AssetGenImage('assets/images/icon.png');
 
   /// File path: assets/images/jethro.json
   String get jethro => 'assets/images/jethro.json';
@@ -72,9 +71,14 @@ class $AssetsImagesGen {
   /// File path: assets/images/profile.jpg
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.jpg');
 
-  /// Directory path: assets/images/wellspharmacy
-  $AssetsImagesWellspharmacyGen get wellspharmacy =>
-      const $AssetsImagesWellspharmacyGen();
+  /// Directory path: assets/images/skills
+  $AssetsImagesSkillsGen get skills => const $AssetsImagesSkillsGen();
+
+  /// File path: assets/images/skills.json
+  String get skillsJson => 'assets/images/skills.json';
+
+  /// File path: assets/images/skills2.json
+  String get skills2 => 'assets/images/skills2.json';
 
   /// List of all assets
   List<dynamic> get values => [
@@ -83,6 +87,7 @@ class $AssetsImagesGen {
         bccTruck,
         bigcreekmockup,
         diggingBoneUp,
+        icon,
         jethro,
         jethro1,
         linkedin,
@@ -92,7 +97,9 @@ class $AssetsImagesGen {
         medvendormockup,
         painting,
         pickleball,
-        profile
+        profile,
+        skillsJson,
+        skills2
       ];
 }
 
@@ -135,10 +142,6 @@ class $AssetsImagesBigcreekGen {
   AssetGenImage get homescreen =>
       const AssetGenImage('assets/images/bigcreek/homescreen.png');
 
-  /// File path: assets/images/bigcreek/icon.png
-  AssetGenImage get icon =>
-      const AssetGenImage('assets/images/bigcreek/icon.png');
-
   /// File path: assets/images/bigcreek/jobSiteAdded.png
   AssetGenImage get jobSiteAdded =>
       const AssetGenImage('assets/images/bigcreek/jobSiteAdded.png');
@@ -163,6 +166,10 @@ class $AssetsImagesBigcreekGen {
   AssetGenImage get offlineJobsites =>
       const AssetGenImage('assets/images/bigcreek/offline_jobsites.png');
 
+  /// File path: assets/images/bigcreek/sticky_notes.png
+  AssetGenImage get stickyNotes =>
+      const AssetGenImage('assets/images/bigcreek/sticky_notes.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         jobSiteDetails,
@@ -174,25 +181,14 @@ class $AssetsImagesBigcreekGen {
         downloadingJobsite,
         employeeCard,
         homescreen,
-        icon,
         jobSiteAdded,
         jobSitesForceDownload,
         login,
         menuOffline,
         menuOnline,
-        offlineJobsites
+        offlineJobsites,
+        stickyNotes
       ];
-}
-
-class $AssetsImagesBridgecareGen {
-  const $AssetsImagesBridgecareGen();
-
-  /// File path: assets/images/bridgecare/Home.png
-  AssetGenImage get home =>
-      const AssetGenImage('assets/images/bridgecare/Home.png');
-
-  /// List of all assets
-  List<AssetGenImage> get values => [home];
 }
 
 class $AssetsImagesMedvendorGen {
@@ -298,15 +294,71 @@ class $AssetsImagesMedvendorGen {
       ];
 }
 
-class $AssetsImagesWellspharmacyGen {
-  const $AssetsImagesWellspharmacyGen();
+class $AssetsImagesSkillsGen {
+  const $AssetsImagesSkillsGen();
 
-  /// File path: assets/images/wellspharmacy/Login.png
-  AssetGenImage get login =>
-      const AssetGenImage('assets/images/wellspharmacy/Login.png');
+  /// File path: assets/images/skills/After Effects.png
+  AssetGenImage get afterEffects =>
+      const AssetGenImage('assets/images/skills/After Effects.png');
+
+  /// File path: assets/images/skills/BLoC.png
+  AssetGenImage get bLoC =>
+      const AssetGenImage('assets/images/skills/BLoC.png');
+
+  /// File path: assets/images/skills/CSS.png
+  AssetGenImage get css => const AssetGenImage('assets/images/skills/CSS.png');
+
+  /// File path: assets/images/skills/Design Systems.png
+  AssetGenImage get designSystems =>
+      const AssetGenImage('assets/images/skills/Design Systems.png');
+
+  /// File path: assets/images/skills/Figma.png
+  AssetGenImage get figma =>
+      const AssetGenImage('assets/images/skills/Figma.png');
+
+  /// File path: assets/images/skills/Flutter.png
+  AssetGenImage get flutter =>
+      const AssetGenImage('assets/images/skills/Flutter.png');
+
+  /// File path: assets/images/skills/HTML.png
+  AssetGenImage get html =>
+      const AssetGenImage('assets/images/skills/HTML.png');
+
+  /// File path: assets/images/skills/Illustrator.png
+  AssetGenImage get illustrator =>
+      const AssetGenImage('assets/images/skills/Illustrator.png');
+
+  /// File path: assets/images/skills/Motion Graphics.png
+  AssetGenImage get motionGraphics =>
+      const AssetGenImage('assets/images/skills/Motion Graphics.png');
+
+  /// File path: assets/images/skills/Photoshop.png
+  AssetGenImage get photoshop =>
+      const AssetGenImage('assets/images/skills/Photoshop.png');
+
+  /// File path: assets/images/skills/React Native.png
+  AssetGenImage get reactNative =>
+      const AssetGenImage('assets/images/skills/React Native.png');
+
+  /// File path: assets/images/skills/Wire Framing.png
+  AssetGenImage get wireFraming =>
+      const AssetGenImage('assets/images/skills/Wire Framing.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [login];
+  List<AssetGenImage> get values => [
+        afterEffects,
+        bLoC,
+        css,
+        designSystems,
+        figma,
+        flutter,
+        html,
+        illustrator,
+        motionGraphics,
+        photoshop,
+        reactNative,
+        wireFraming
+      ];
 }
 
 class Assets {

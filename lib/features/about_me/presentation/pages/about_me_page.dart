@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/core/footer.dart';
+import 'package:portfolio_flutter/core/utils/widgets/footer.dart';
 
 import 'package:portfolio_flutter/features/about_me/presentation/widgets/about_section.dart';
 import 'package:portfolio_flutter/features/about_me/presentation/widgets/hobby_carousel.dart';

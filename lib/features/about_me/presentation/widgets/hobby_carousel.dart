@@ -25,67 +25,53 @@ class _HobbyCarouselState extends State<HobbyCarousel> {
             Padding(
               padding: EdgeInsets.all(16),
               child: Text(
-                'When I\'m not working, I\'m...',
+                'When I\'m not working, I take interest in ...',
                 style:
                     AppTypography.s24w600.copyWith(color: Appcolors.darkText),
               ),
             ),
-            SizedBox(
-              width: isSmallScreen
-                  ? MediaQuery.of(context).size.width * .90
-                  : MediaQuery.of(context).size.width * .95,
-              height: MediaQuery.of(context).size.height * .6,
-              child: Column(
-                children: [
-                  CarouselSlider.builder(
-                    itemCount: items.length,
-                    itemBuilder: (context, index, realIndex) {
-                      final item = items[index];
-                      return Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 4),
-                            width: isSmallScreen
-                                ? 400
-                                : MediaQuery.of(context).size.width * .35,
-                            height: isSmallScreen
-                                ? 400
-                                : MediaQuery.of(context).size.height * .35,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(5),
-                              child: Image.asset(
-                                item.image,
-                                fit: BoxFit.cover,
-                              ),
+            Column(
+              children: [
+                CarouselSlider.builder(
+                  itemCount: items.length,
+                  itemBuilder: (context, index, realIndex) {
+                    final item = items[index];
+                    return Column(
+                      children: [
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                          width: isSmallScreen
+                              ? 350
+                              : MediaQuery.of(context).size.width * .35,
+                          height: isSmallScreen
+                              ? 350
+                              : MediaQuery.of(context).size.height * .35,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(5),
+                            child: Image.asset(
+                              item.image,
+                              fit: BoxFit.cover,
                             ),
                           ),
-                          Text(
-                            item.title,
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          // SizedBox(
-                          //   width: 400,
-                          //   height: 90,
-                          //   child: Text(
-                          //     item.description,
-                          //     style: TextStyle(fontSize: 14),
-                          //   ),
-                          // ),
-                        ],
-                      );
-                    },
-                    options: CarouselOptions(
-                      height: isSmallScreen ? 600 : 600,
-                      enlargeCenterPage: true,
-                      autoPlay: true,
-                      aspectRatio: 16 / 9,
-                      viewportFraction: isSmallScreen ? 1 : .5,
-                    ),
+                        ),
+                        Text(
+                          item.title,
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    );
+                  },
+                  options: CarouselOptions(
+                    height: isSmallScreen ? 400 : 600,
+                    enlargeCenterPage: true,
+                    autoPlay: true,
+                    aspectRatio: 16 / 9,
+                    viewportFraction: isSmallScreen ? 1 : .5,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),

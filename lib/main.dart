@@ -5,11 +5,9 @@ import 'package:portfolio_flutter/base_screen.dart';
 import 'package:portfolio_flutter/core/theme/colors.dart';
 import 'package:portfolio_flutter/features/about_me/presentation/pages/about_me_page.dart';
 import 'package:portfolio_flutter/features/bcc/presentation/pages/big_creek_construction_page.dart';
-import 'package:portfolio_flutter/features/bridge_care/presentation/bridgecare_page.dart';
 import 'package:portfolio_flutter/features/for_fun/presentation/pages/for_fun_page.dart';
 import 'package:portfolio_flutter/features/home/presentation/pages/homepage.dart';
 import 'package:portfolio_flutter/features/medvendor/presentation/pages/medvendor_page.dart';
-import 'package:portfolio_flutter/features/wells_pharmacy/presentation/pages/wells_pharmacy_page.dart';
 
 void main() {
   final GoRouter router = GoRouter(
@@ -38,14 +36,6 @@ void main() {
           GoRoute(
             path: '/MedVendor',
             builder: (context, state) => MedvendorPage(),
-          ),
-          GoRoute(
-            path: '/BridgeCare',
-            builder: (context, state) => BridgecarePage(),
-          ),
-          GoRoute(
-            path: '/WellPharmacy',
-            builder: (context, state) => WellsPharmacyPage(),
           ),
         ],
       ),

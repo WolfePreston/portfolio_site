@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/core/appbar.dart';
+import 'package:portfolio_flutter/core/utils/widgets/appbar.dart';
 
 class BaseScreen extends StatelessWidget {
   final Widget child;
