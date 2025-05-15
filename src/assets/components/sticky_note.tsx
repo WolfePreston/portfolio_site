@@ -114,6 +114,8 @@ const StickyNote = () => {
         string={copied ? "Copied!" : "Copy Text"}
         color={"var(--color-lightRed)"}
         onClick={handleCopy}
+        skew={""}
+        negativeSkew={false}
       />
     </div>
   );
