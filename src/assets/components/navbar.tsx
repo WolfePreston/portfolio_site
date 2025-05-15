@@ -33,7 +33,11 @@ export const Navigation: React.FC = () => {
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
                   className="focus:outline-none"
-                  style={{ borderRadius: "0" }}
+                  style={{
+                    borderRadius: "0",
+                    backgroundColor: "var(--color-black)",
+                    padding: ".25rem",
+                  }}
                 >
                   <svg
                     className="w-6 h-6 text-[var(--color-offwhite)]"
