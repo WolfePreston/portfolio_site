@@ -7,13 +7,16 @@ import { Navigation } from "../src/assets/components/navbar";
 import { Footer } from "../src/assets/components/footer";
 import { ScrollToTop } from "./assets/hooks/scroll_to_top";
 
-// Optional: global wrapper or layout (similar to your <Layout> pattern)
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ fontFamily: "Inter, sans-serif" }}>
-      <Navigation />
-      {children}
-      <Footer />
+    <div className="relative" style={{ fontFamily: "Inter, sans-serif" }}>
+      <div className="relative z-30">
+        <Navigation />
+      </div>
+      <div className="relative z-10">{children}</div>
+      <div className="relative z-30">
+        <Footer />
+      </div>
     </div>
   );
 }

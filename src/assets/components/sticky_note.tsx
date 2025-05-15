@@ -52,7 +52,6 @@ const StickyNote = () => {
   //   alert(`Sending note: ${noteText}`);
   // };
 
-  // Add event listeners for mousemove and mouseup globally
   useEffect(() => {
     if (isDragging) {
       window.addEventListener("mousemove", handleMouseMove);
@@ -62,7 +61,6 @@ const StickyNote = () => {
       window.removeEventListener("mouseup", handleMouseUp);
     }
 
-    // Cleanup the event listeners on component unmount
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);

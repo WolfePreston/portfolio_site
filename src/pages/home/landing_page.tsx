@@ -4,12 +4,23 @@ import bigCreekMockup from "../../assets/images/bigcreek/bigcreekmockup.png";
 import medVendorMockup from "../../assets/images/medvendor/medvendormockup.png";
 import profile from "../../assets/images/profile.jpg";
 import { Link } from "react-router-dom";
+import { StickyNoteAnimator } from "../../assets/components/stickynote_animator";
+import splat from "../../assets/lottie/splat.json";
+import strike from "../../assets/lottie/strike.json";
+import arrow from "../../assets/lottie/arrow.json";
+import bomb from "../../assets/lottie/bomb.json";
 
 export function LandingPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <main className="flex flex-col items-center w-full px-4 max-w-7xl sm:px-8 lg:px-24">
-        <div className="flex flex-col items-center mt-12 mb-4">
+        <div className="absolute z-0 w-full h-full pointer-events-none">
+          <StickyNoteAnimator animationData={splat} stickyNoteColor="Green" />
+          <StickyNoteAnimator animationData={strike} stickyNoteColor="Pink" />
+          <StickyNoteAnimator animationData={arrow} stickyNoteColor="Yellow" />
+          <StickyNoteAnimator animationData={bomb} stickyNoteColor="Orange" />
+        </div>
+        <div className="z-10 flex flex-col items-center mt-12 mb-4">
           <Link to={"/about"}>
             <img
               src={profile}
