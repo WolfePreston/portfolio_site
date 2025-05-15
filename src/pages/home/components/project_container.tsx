@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ProjectSetup } from "./project_setup";
 import type { ProjectTypeProps } from "./project_type";
 import { Link } from "react-router-dom";
+import { useMediaQuery } from "../../../assets/hooks/screen_sizes";
 
 export const ProjectContainer: React.FC<ProjectTypeProps> = ({
   title,
@@ -10,15 +11,20 @@ export const ProjectContainer: React.FC<ProjectTypeProps> = ({
   to,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const isMobile = useMediaQuery("sm");
 
   return (
     <Link to={to}>
       <div
-        className="relative flex flex-col items-center justify-center max-w-96 max-h-96 min-h-48 min-w-32 m-6"
+        style={
+          isMobile
+            ? { maxWidth: "20rem", maxHeight: "20rem" }
+            : { maxWidth: "24rem", maxHeight: "24rem" }
+        }
+        className="relative flex flex-col items-center justify-center m-6"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Background stacked cards */}
         {[...Array(3)].map((_, i) => {
           const baseOffset = i * 8;
           const hoverOffsetX = (i + 1) * 8;
@@ -39,9 +45,8 @@ export const ProjectContainer: React.FC<ProjectTypeProps> = ({
             />
           );
         })}
-        {/* Top card with content */}
         <div
-          className="z-20 transition-transform duration-300 w-full h-12 flex items-center justify-center p-6"
+          className="z-20 flex items-center justify-center w-full h-12 p-6 transition-transform duration-300"
           style={{
             color: "var(--color-offwhite)",
             backgroundColor: "var(--color-black)",
@@ -53,14 +58,15 @@ export const ProjectContainer: React.FC<ProjectTypeProps> = ({
           {description}
         </div>
         <div
-          className=" z-10 transition-transform duration-300  overflow-hidden"
+          className="z-10 transition-transform duration-300 "
           style={{
+            overflow: "hidden",
             transform: isHovered
               ? "translate(26px, -14px)"
               : "translate(20px, 15px)",
           }}
         >
-          <img src={image} alt={title} className="w-auto max-w-sm" />
+          <img src={image} alt={title} style={{ marginTop: "1rem" }} />
         </div>
         <ProjectSetup
           title={title}

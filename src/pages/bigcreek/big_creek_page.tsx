@@ -23,7 +23,7 @@ import { Button } from "../../assets/components/button";
 export function BigCreekPage() {
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="w-full px-4 sm:px-8 max-w-screen-xl mx-auto">
+      <div className="w-full max-w-screen-xl px-4 mx-auto sm:px-8">
         <TitleSection
           title="Big Creek Construction"
           description=" A mobile app that assists construction supervisors input hours while away from their office."
@@ -113,7 +113,7 @@ export function BigCreekPage() {
           description3="Require users to download job sites before continuing with the process to limit any issues that may appear."
         />
 
-        <div className="w-full px-4 sm:px-8 mt-6 max-w-screen-xl mx-auto">
+        <div className="w-full max-w-screen-xl px-4 mx-auto mt-6 sm:px-8">
           <ParallelogramTextbox
             title="Other Revisions"
             description="Where should checkpoints be placed to save progress as employees input their hours? This question arose as the team began developing a working prototype. As a designer, I found this challenge to be a valuable learning experience. Moving forward on future projects, I realize the importance of anticipating the user’s journey—whether it ends in an error or a screen lacking appropriate data. Thinking ahead for such scenarios allows me to strategically place checkpoints where data can be saved or retrieved, ensuring a smoother and more seamless experience for the user."
@@ -125,7 +125,7 @@ export function BigCreekPage() {
           />
         </div>
 
-        <div className="flex flex-col gap-8 px-4 sm:px-8 my-12 items-center w-full max-w-screen-xl mx-auto">
+        <div className="flex flex-col items-center w-full max-w-screen-xl gap-8 px-4 mx-auto my-12 sm:px-8">
           <div className="flex flex-row items-center justify-center gap-4 transform -translate-x-12">
             <img src={camera} className="w-24" />
             <h1 className="text-2xl font-bold text-[var(--color-black)]">
@@ -180,6 +180,8 @@ export function BigCreekPage() {
                 string="MedVendor"
                 color="var(--color-lightRed)"
                 to="/medVendor"
+                skew={"10deg"}
+                negativeSkew={false}
               />
             </div>
           </div>

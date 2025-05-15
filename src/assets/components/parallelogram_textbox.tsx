@@ -1,6 +1,7 @@
 type TextBoxProps = {
   title: string;
   description: string;
+  description2?: string;
   width: string;
   height: string;
   skew: string;
@@ -14,6 +15,7 @@ type TextBoxProps = {
 export const ParallelogramTextbox: React.FC<TextBoxProps> = ({
   title,
   description,
+  description2,
   width,
   height,
   skew,
@@ -40,7 +42,7 @@ export const ParallelogramTextbox: React.FC<TextBoxProps> = ({
           fontSize: "2rem",
           fontWeight: "bold",
           color: "var(--color-black)",
-          padding: "1rem",
+          padding: "2rem",
           transform: negativeSkew ? `skewX(-${skew})` : `skewX(${skew})`,
         }}
       >
@@ -51,11 +53,24 @@ export const ParallelogramTextbox: React.FC<TextBoxProps> = ({
           fontSize: "1rem",
           fontWeight: "normal",
           color: "var(--color-black)",
-          padding: "2.5rem",
+          padding: "2rem",
+          paddingTop: "0",
           transform: negativeSkew ? `skewX(-${skew})` : `skewX(${skew})`,
         }}
       >
         {description}
+      </p>
+      <p
+        style={{
+          fontSize: "1rem",
+          fontWeight: "normal",
+          color: "var(--color-black)",
+          padding: "2rem",
+          paddingTop: "0",
+          transform: negativeSkew ? `skewX(-${skew})` : `skewX(${skew})`,
+        }}
+      >
+        {description2}
       </p>
       <img src={image} style={imageStyle} />
     </div>

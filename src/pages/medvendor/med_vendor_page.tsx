@@ -21,7 +21,7 @@ import { Button } from "../../assets/components/button";
 
 export function MedVendorPage() {
   return (
-    <div className="flex flex-col items-center justify-center w-full px-4 sm:px-8 max-w-screen-xl mx-auto">
+    <div className="flex flex-col items-center justify-center w-full max-w-screen-xl px-4 mx-auto sm:px-8">
       <TitleSection
         title="MedVendor"
         description="A mobile app connecting patients with medical facilities within their network."
@@ -55,7 +55,7 @@ export function MedVendorPage() {
         description="Finding information and sharing information on Medical Facilities is the core of this app below are the components I created to help accomplish this"
       />
 
-      <div className="flex flex-col gap-12 w-full items-center">
+      <div className="flex flex-col items-center w-full gap-12">
         <ParallelogramComponents
           title="Sharing and Saving Capabilities"
           description="When a user opens a medical facility's page, the header provides two sharing options for patients: an expandable QR code for direct sharing and a share button. Additionally, users can save a facility for easy access if they visit it frequently."
@@ -98,8 +98,8 @@ export function MedVendorPage() {
         className="w-full max-w-5xl mx-auto mt-12"
       />
 
-      <div className="flex flex-col gap-8 px-4 sm:px-8 my-12 items-center w-full max-w-screen-xl mx-auto">
-        <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-4">
+      <div className="flex flex-col items-center w-full max-w-screen-xl gap-8 px-4 mx-auto my-12 sm:px-8">
+        <div className="flex flex-col flex-wrap items-center justify-center gap-4 md:flex-row">
           <img src={camera} className="w-24" />
           <h1 className="text-2xl font-bold text-[var(--color-black)]">
             Big Picture
@@ -155,6 +155,8 @@ export function MedVendorPage() {
             string="Big Creek"
             color="var(--color-green)"
             to="/bigCreek"
+            skew={"10deg"}
+            negativeSkew={true}
           />
         </div>
       </div>

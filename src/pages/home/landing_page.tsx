@@ -9,7 +9,6 @@ export function LandingPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <main className="flex flex-col items-center w-full px-4 max-w-7xl sm:px-8 lg:px-24">
-        {/* Profile Section */}
         <div className="flex flex-col items-center mt-12 mb-4">
           <Link to={"/about"}>
             <img
@@ -22,14 +21,18 @@ export function LandingPage() {
               }}
             />
           </Link>
-          <div className="p-4" style={{ transform: "rotate(4deg)" }}>
-            <Button string="About" color="var(--color-green)" to="/about" />
+          <div className="p-4" style={{ transform: "rotate(-4deg)" }}>
+            <Button
+              string="About"
+              color="var(--color-darkGreen)"
+              to="/about"
+              skew={"20deg"}
+              negativeSkew={true}
+            />
           </div>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid items-center justify-center grid-cols-1 gap-16 md:grid-cols-2">
-          {/* Big Creek */}
           <div className="flex flex-col items-center">
             <ProjectContainer
               title="Big Creek"
@@ -42,11 +45,12 @@ export function LandingPage() {
                 string="Big Creek"
                 color="var(--color-green)"
                 to="/bigCreek"
+                skew={"20deg"}
+                negativeSkew={false}
               />
             </div>
           </div>
 
-          {/* MedVendor */}
           <div className="flex flex-col items-center">
             <ProjectContainer
               title="MedVendor"
@@ -59,6 +63,8 @@ export function LandingPage() {
                 string="MedVendor"
                 color="var(--color-lightRed)"
                 to="/medVendor"
+                skew={"20deg"}
+                negativeSkew={true}
               />
             </div>
           </div>
