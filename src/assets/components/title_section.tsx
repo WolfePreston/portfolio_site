@@ -1,3 +1,5 @@
+import { useMediaQuery } from "../../assets/hooks/screen_sizes";
+
 type TitleProps = {
   title: string;
   description: string;
@@ -23,12 +25,17 @@ export const TitleSection: React.FC<TitleProps> = ({
   vector,
   primarycolor,
 }) => {
+  const isMobile = useMediaQuery("sm");
+
   return (
-    <div className="overflow-hidden flex flex-col items-center justify-start w-full px-4 sm:px-8 max-w-screen-xl mx-auto mt-0">
-      <div className="flex flex-col lg:flex-row items-start justify-center gap-6 lg:gap-12 w-full">
-        {/* Left Info Panel */}
+    <div className="flex flex-col items-center justify-start w-full max-w-screen-xl px-4 mx-auto mt-0 overflow-hidden sm:px-8">
+      <div
+        className={`flex w-full items-center justify-center gap-6 ${
+          isMobile ? "flex-col" : "flex-row gap-12 items-start"
+        }`}
+      >
         <div
-          className="relative z-0 mt-0 flex flex-col items-start justify-start pt-4 pb-4"
+          className="relative z-0 flex flex-col items-center justify-center pt-4 pb-4"
           style={{
             minHeight: "36rem",
             width: "100%",
@@ -39,7 +46,7 @@ export const TitleSection: React.FC<TitleProps> = ({
           }}
         >
           <h1
-            className="w-full flex flex-col items-center text-center px-4 py-2 font-extrabold text-3xl border-y-2 border-black"
+            className="flex flex-col items-center w-full px-4 py-2 text-3xl font-extrabold text-center border-black border-y-2"
             style={{
               backgroundColor: "var(--color-offwhite)",
               color: "var(--color-black)",
@@ -67,22 +74,26 @@ export const TitleSection: React.FC<TitleProps> = ({
         </div>
 
         {/* Right Mockup Panel */}
-        <div className="relative w-full max-w-2xl aspect-[4/3] lg:aspect-auto lg:h-[60vh] mt-6 lg:mt-6">
+        <div
+          className={`relative w-full max-w-xl ${
+            isMobile ? "aspect-[4/3]" : "lg:h-[60vh]"
+          } mt-6`}
+        >
           <img
             src={vector}
             alt="vector background"
-            className="absolute top-0 left-0 w-full h-full object-contain z-0"
+            className="absolute top-0 left-0 z-0 object-contain w-full h-full"
           />
-          <div className="relative w-full h-full z-10">
+          <div className="relative z-10 w-full h-full">
             <img
               src={mockup}
               alt="mockup"
-              className="levitate w-full h-full object-contain"
+              className="object-contain w-full h-full levitate"
             />
             <img
               src={badge}
               alt="badge"
-              className="absolute bottom-4 right-4 w-28 sm:w-36 object-contain z-30"
+              className="absolute z-30 object-contain bottom-4 right-4 w-28 sm:w-36"
             />
           </div>
         </div>

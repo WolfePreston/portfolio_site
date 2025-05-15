@@ -27,14 +27,14 @@ export function AboutPage() {
         </div>
       )}
 
-      <div className="flex flex-col md:flex-row items-center justify-center w-full px-4 sm:px-8 max-w-screen-xl mx-auto gap-8 py-12">
+      <div className="flex flex-col items-center justify-center w-full max-w-screen-xl gap-8 px-4 py-12 mx-auto md:flex-row sm:px-8">
         <img
           src={profile}
-          className="w-40 md:w-1/4"
           alt="Profile"
+          className="object-cover w-32 h-32 rounded-full sm:w-40 sm:h-40"
           style={{
             border: "2px solid var(--color-black)",
-            boxShadow: "4px 4px var(--color-black)",
+            boxShadow: "4px 4px 0 var(--color-black)",
           }}
         />
 

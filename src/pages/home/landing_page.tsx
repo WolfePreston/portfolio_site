@@ -3,29 +3,32 @@ import { ProjectContainer } from "./components/project_container";
 import bigCreekMockup from "../../assets/images/bigcreek/bigcreekmockup.png";
 import medVendorMockup from "../../assets/images/medvendor/medvendormockup.png";
 import profile from "../../assets/images/profile.jpg";
+import { Link } from "react-router-dom";
 
 export function LandingPage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <main className="w-full max-w-7xl px-4 sm:px-8 lg:px-24 flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <main className="flex flex-col items-center w-full px-4 max-w-7xl sm:px-8 lg:px-24">
         {/* Profile Section */}
-        <div className="flex flex-col items-center mb-4 mt-12">
-          <img
-            src={profile}
-            alt="Profile"
-            className="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-full"
-            style={{
-              border: "2px solid var(--color-black)",
-              boxShadow: "4px 4px 0 var(--color-black)",
-            }}
-          />
+        <div className="flex flex-col items-center mt-12 mb-4">
+          <Link to={"/about"}>
+            <img
+              src={profile}
+              alt="Profile"
+              className="object-cover w-32 h-32 rounded-full sm:w-40 sm:h-40"
+              style={{
+                border: "2px solid var(--color-black)",
+                boxShadow: "4px 4px var(--color-black)",
+              }}
+            />
+          </Link>
           <div className="p-4" style={{ transform: "rotate(4deg)" }}>
             <Button string="About" color="var(--color-green)" to="/about" />
           </div>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center justify-center">
+        <div className="grid items-center justify-center grid-cols-1 gap-16 md:grid-cols-2">
           {/* Big Creek */}
           <div className="flex flex-col items-center">
             <ProjectContainer
