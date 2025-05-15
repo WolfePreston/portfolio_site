@@ -1,0 +1,32 @@
+import React from "react";
+
+type SummarryProps = {
+  summary: string;
+};
+
+export const Summary: React.FC<SummarryProps> = ({ summary }) => {
+  return (
+    <div
+      style={{
+        backgroundColor: "var(--color-offwhite)",
+        border: "2px solid var(--color-black)",
+        boxShadow: "4px 4px var(--color-black)",
+        padding: "2rem",
+        margin: "1rem",
+      }}
+      className="flex flex-col justify-center max-w-screen-lg"
+    >
+      <h1
+        style={{
+          fontSize: "2rem",
+          fontWeight: "bold",
+          color: "var(--color-black)",
+        }}
+        className="text-center"
+      >
+        Summary
+      </h1>
+      {summary}
+    </div>
+  );
+};
