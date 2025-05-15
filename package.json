@@ -1,5 +1,6 @@
 {
   "name": "react-portfolio",
+  "homepage": "https://wolfepreston.github.io/portfolio_site/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,12 +9,11 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "vite build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build/client"
   },
   "dependencies": {
     "framer-motion": "^12.11.3",
-    "gh-pages": "^6.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-intersection-observer": "^9.16.0",
