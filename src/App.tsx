@@ -21,7 +21,7 @@ function App() {
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/portfolio_site" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/bigCreek" element={<BigCreekPage />} />
         <Route path="/medVendor" element={<MedVendorPage />} />

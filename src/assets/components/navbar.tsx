@@ -57,7 +57,7 @@ export const Navigation: React.FC = () => {
 
           {/* Navigation Links - Desktop */}
           <div className="hidden min-[871px]:flex flex-row space-x-8">
-            <NavigationLink title="Home" to="/" />
+            <NavigationLink title="Home" to="/portfolio_site" />
             <NavigationLink title="About Me" to="/about" />
             <NavigationLink title="Big Creek" to="/bigCreek" />
             <NavigationLink title="MedVendor" to="/medVendor" />
