@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
-import Lottie from "lottie-react";
+import { useEffect, useRef, useState } from "react";
+import lottie from "lottie-web/build/player/lottie_light"; // <- lighter version
 import Orange from "../images/stickyNoteOrange.png";
 import Green from "../images/stickyNoteGreen.png";
 import Pink from "../images/stickyNotePink.png";
@@ -28,10 +28,11 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
   loop,
 }) => {
   const noteRef = useRef<HTMLDivElement>(null);
+  const lottieRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const randomDelay = `${Math.random() * 10}s`;
 
+  const randomDelay = Math.random() * 3000; // in ms
   const noteSize = 256;
 
   const getRandomPosition = () => {
@@ -75,12 +76,31 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
     }
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, [isDragging]);
+
+  // Load Lottie animation on mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (lottieRef.current) {
+        lottie.loadAnimation({
+          container: lottieRef.current,
+          renderer: "svg",
+          loop,
+          autoplay: true,
+          animationData,
+        });
+      }
+    }, randomDelay);
+
+    return () => {
+      clearTimeout(timer);
+      lottie.destroy(); // cleanup
+    };
+  }, [animationData, loop, randomDelay]);
 
   const stickyNoteImage = noteImages[stickyNoteColor] || Yellow;
 
@@ -90,12 +110,11 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
       onMouseDown={handleMouseDown}
       style={{
         position: "absolute",
-        top: randomPostion ? position.top : "",
-        left: randomPostion ? position.left : "",
+        top: randomPostion ? position.top : "20px",
+        left: randomPostion ? position.left : "20px",
         width: "16rem",
         height: "16rem",
         zIndex: 1000,
-
         cursor: isDragging ? "grabbing" : "grab",
       }}
     >
@@ -104,19 +123,17 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
         alt={`${stickyNoteColor} Sticky Note`}
         className="absolute top-0 left-0 w-full h-full"
       />
-
-      <div style={Optionalstyle}>
-        <Lottie
-          animationData={animationData}
-          className="absolute top-0 w-full h-full left-5"
-          style={{
-            width: "65%",
-            animationDelay: randomDelay,
-            animationFillMode: "both",
-          }}
-          loop={loop}
-        />
-      </div>
+      <div
+        ref={lottieRef}
+        style={{
+          ...Optionalstyle,
+          position: "absolute",
+          top: 0,
+          width: "75%",
+          height: "100%",
+          opacity: 0.85,
+        }}
+      />
     </div>
   );
 };

@@ -36,7 +36,7 @@ export function BigCreekPage() {
           <StickyNoteAnimator
             animationData={cabin}
             stickyNoteColor={"Green"}
-            Optionalstyle={{ marginLeft: "4rem" }}
+            Optionalstyle={{ marginLeft: "2rem" }}
             randomPostion={false}
             loop={false}
           />
@@ -152,6 +152,7 @@ export function BigCreekPage() {
           <StickyNoteAnimator
             animationData={truckoutline}
             stickyNoteColor={"Pink"}
+            Optionalstyle={{ marginLeft: "1.25rem" }}
             randomPostion={false}
             loop={true}
           />
@@ -180,6 +181,7 @@ export function BigCreekPage() {
           <StickyNoteAnimator
             animationData={coloredTruck}
             stickyNoteColor={"Orange"}
+            Optionalstyle={{ marginLeft: "1.25rem" }}
             randomPostion={false}
             loop={true}
           />
