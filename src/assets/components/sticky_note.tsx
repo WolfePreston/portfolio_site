@@ -1,56 +1,35 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "../components/button";
+import StickyNoteImage from "../images/stickyNoteYellow.png";
 
 const StickyNote = () => {
   const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(noteText);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-  };
-
   const [noteText, setNoteText] = useState(
-    "Hello My name is ________ and I just saw your portfolio and I think you are a great front end developer. I would love to work with you on a project. Please let me know if you are interested."
+    "Hello My name is ________ and I just saw your portfolio and I think you are an awesome front end developer. I would love to send you a role I think you would be a great fit for. Please let me know if you are interested."
   );
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const noteRef = useRef<HTMLDivElement>(null);
 
-  const handleChange = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    setNoteText(e.target.value);
-  };
-
-  const handleMouseDown = (e: { clientX: number; clientY: number }) => {
-    setIsDragging(true);
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     const note = noteRef.current;
     if (!note) return;
-    const rect = note.getBoundingClientRect();
+
+    setIsDragging(true);
     setOffset({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
+      x: e.pageX - note.offsetLeft,
+      y: e.pageY - note.offsetTop,
     });
   };
 
-  const handleMouseMove = (e: { clientX: number; clientY: number }) => {
-    if (isDragging) {
-      const note = noteRef.current;
-      if (note) {
-        note.style.left = `${e.clientX - offset.x}px`;
-        note.style.top = `${e.clientY - offset.y}px`;
-      }
-    }
+  const handleMouseMove = (e: MouseEvent) => {
+    if (!isDragging || !noteRef.current) return;
+
+    noteRef.current.style.left = `${e.pageX - offset.x}px`;
+    noteRef.current.style.top = `${e.pageY - offset.y}px`;
   };
 
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  // const handleSend = () => {
-  //   alert(`Sending note: ${noteText}`);
-  // };
+  const handleMouseUp = () => setIsDragging(false);
 
   useEffect(() => {
     if (isDragging) {
@@ -71,50 +50,73 @@ const StickyNote = () => {
     <div
       ref={noteRef}
       style={{
-        backgroundColor: "#FFEB3B",
-        padding: "1rem",
-        width: "20rem",
-        height: "20rem",
-        boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.5)",
         position: "absolute",
-        top: "20px",
-        left: "20px",
-        fontFamily: "Arial, sans-serif",
-        cursor: "move",
+        top: "30vh",
+        left: "5vw",
+        width: "24rem",
+        height: "24rem",
+        cursor: isDragging ? "grabbing" : "grab",
+        zIndex: 1000,
       }}
-      onMouseDown={handleMouseDown}
     >
-      <div
+      <img
+        src={StickyNoteImage}
+        alt="Sticky Note"
         style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 0,
+        }}
+      />
+
+      <div
+        className="drag-handle"
+        onMouseDown={handleMouseDown}
+        style={{
+          position: "relative",
+          zIndex: 2,
           fontWeight: "bold",
-          marginBottom: "10px",
-          cursor: "move",
+          padding: "1rem",
+          cursor: "grab",
+          marginTop: "1.5rem",
+          marginLeft: "1.5rem",
+          rotate: "1deg",
         }}
       >
         Reminder to send email to Preston
       </div>
+
       <textarea
         value={noteText}
-        onChange={handleChange}
+        onChange={(e) => setNoteText(e.target.value)}
         style={{
-          width: "100%",
-          height: "calc(100% - 40px)",
-          border: "none",
-          outline: "none",
-          background: "transparent",
+          width: "75%",
+          marginLeft: "2.25rem",
+          height: "55%",
+          zIndex: 2,
+          position: "relative",
           resize: "none",
-          fontSize: "14px",
-          color: "#333",
+          outline: "none",
+          rotate: "1deg",
         }}
       />
 
-      <Button
-        string={copied ? "Copied!" : "Copy Text"}
-        color={"var(--color-lightRed)"}
-        onClick={handleCopy}
-        skew={""}
-        negativeSkew={false}
-      />
+      <div style={{ position: "relative", zIndex: 2 }}>
+        <Button
+          string={copied ? "Copied!" : "Copy Text"}
+          color={"var(--color-lightRed)"}
+          onClick={() => {
+            navigator.clipboard.writeText(noteText);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 1500);
+          }}
+          skew={""}
+          negativeSkew={false}
+        />
+      </div>
     </div>
   );
 };

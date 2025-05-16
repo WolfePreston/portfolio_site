@@ -8,6 +8,9 @@ import Yellow from "../images/stickyNoteYellow.png";
 type StickyNoteAnimatorProps = {
   animationData: object;
   stickyNoteColor: string;
+  Optionalstyle?: React.CSSProperties;
+  randomPostion: boolean;
+  loop: boolean;
 };
 
 const noteImages: Record<string, string> = {
@@ -20,6 +23,9 @@ const noteImages: Record<string, string> = {
 export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
   animationData,
   stickyNoteColor,
+  Optionalstyle,
+  randomPostion,
+  loop,
 }) => {
   const noteRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -84,12 +90,12 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
       onMouseDown={handleMouseDown}
       style={{
         position: "absolute",
-        top: position.top,
-        left: position.left,
+        top: randomPostion ? position.top : "",
+        left: randomPostion ? position.left : "",
         width: "16rem",
         height: "16rem",
         zIndex: 1000,
-        opacity: 0.8,
+
         cursor: isDragging ? "grabbing" : "grab",
       }}
     >
@@ -98,16 +104,17 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
         alt={`${stickyNoteColor} Sticky Note`}
         className="absolute top-0 left-0 w-full h-full"
       />
-      <div style={{ opacity: 0.85 }}>
+
+      <div style={Optionalstyle}>
         <Lottie
           animationData={animationData}
-          className="absolute top-0 left-0 w-full h-full"
+          className="absolute top-0 w-full h-full left-5"
           style={{
             width: "65%",
             animationDelay: randomDelay,
             animationFillMode: "both",
           }}
-          loop={false}
+          loop={loop}
         />
       </div>
     </div>

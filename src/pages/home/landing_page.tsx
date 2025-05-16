@@ -15,10 +15,30 @@ export function LandingPage() {
     <div className="flex flex-col items-center justify-center min-h-screen">
       <main className="flex flex-col items-center w-full px-4 max-w-7xl sm:px-8 lg:px-24">
         <div className="absolute z-0 w-full h-full pointer-events-none">
-          <StickyNoteAnimator animationData={splat} stickyNoteColor="Green" />
-          <StickyNoteAnimator animationData={strike} stickyNoteColor="Pink" />
-          <StickyNoteAnimator animationData={arrow} stickyNoteColor="Yellow" />
-          <StickyNoteAnimator animationData={bomb} stickyNoteColor="Orange" />
+          <StickyNoteAnimator
+            animationData={splat}
+            stickyNoteColor="Green"
+            randomPostion={true}
+            loop={false}
+          />
+          <StickyNoteAnimator
+            animationData={strike}
+            stickyNoteColor="Pink"
+            randomPostion={true}
+            loop={false}
+          />
+          <StickyNoteAnimator
+            animationData={arrow}
+            stickyNoteColor="Yellow"
+            randomPostion={true}
+            loop={false}
+          />
+          <StickyNoteAnimator
+            animationData={bomb}
+            stickyNoteColor="Orange"
+            randomPostion={true}
+            loop={false}
+          />
         </div>
         <div className="z-10 flex flex-col items-center mt-12 mb-4">
           <Link to={"/about"}>

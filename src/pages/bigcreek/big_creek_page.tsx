@@ -19,26 +19,55 @@ import { JobEmployeeComponents } from "./components/job_employee_components";
 import { ParallelogramTextbox } from "../../assets/components/parallelogram_textbox";
 import { ProjectContainer } from "../home/components/project_container";
 import { Button } from "../../assets/components/button";
+import cabin from "../../assets/lottie/cabin.json";
+import wheel from "../../assets/lottie/wheel.json";
+import truckoutline from "../../assets/lottie/truckoutline.json";
+import coloredTruck from "../../assets/lottie/colored_truck_animation.json";
+
+import { StickyNoteAnimator } from "../../assets/components/stickynote_animator";
 
 export function BigCreekPage() {
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="w-full max-w-screen-xl px-4 mx-auto sm:px-8">
-        <TitleSection
-          title="Big Creek Construction"
-          description=" A mobile app that assists construction supervisors input hours while away from their office."
-          Date="Oct. 2024"
-          Role="Role: Sole UX/UI Designer"
-          Industry="Industry: Construction"
-          tools="Tools: Figma, Flutter, Android Studio, VS Code"
-          mockup={mockup}
-          badge={badge}
-          vector={vector}
-          primarycolor="var(--color-darkGreen)"
-        />
+      <div className="z-10 w-full max-w-screen-xl px-4 mx-auto sm:px-8">
+        <div
+          style={{ zIndex: 0, position: "absolute", top: "20vh", left: "1vw" }}
+        >
+          <StickyNoteAnimator
+            animationData={cabin}
+            stickyNoteColor={"Green"}
+            Optionalstyle={{ marginLeft: "4rem" }}
+            randomPostion={false}
+            loop={false}
+          />
+        </div>
+        <div className="z-10">
+          <TitleSection
+            title="Big Creek Construction"
+            description=" A mobile app that assists construction supervisors input hours while away from their office."
+            Date="Oct. 2024"
+            Role="Role: Sole UX/UI Designer"
+            Industry="Industry: Construction"
+            tools="Tools: Figma, Flutter, Android Studio, VS Code"
+            mockup={mockup}
+            badge={badge}
+            vector={vector}
+            primarycolor="var(--color-darkGreen)"
+          />
+        </div>
 
         <Summary summary="Currently supervisors must go in weekly online to input hours for their employees. In this process they need to first create the job site (location) by adding tasks that were completed, add any equipment, and then open the timesheet page where they can utilize the job site created to assign hours to employees. The current process’ design is made to minimize mistakes so that the accounting department will be able to finalize the process in a timely manner." />
 
+        <div
+          style={{ zIndex: 0, position: "relative", top: "0vh", left: "0vw" }}
+        >
+          <StickyNoteAnimator
+            animationData={wheel}
+            stickyNoteColor={"Pink"}
+            randomPostion={false}
+            loop={true}
+          />
+        </div>
         <UserComic
           userDescription="-Construction Supervisor"
           description="“I need a quick method of inputting hours and tracking my employees that does not force me to have an internet connection when I am ready to do so.”"
@@ -112,6 +141,21 @@ export function BigCreekPage() {
           step3="Step 3"
           description3="Require users to download job sites before continuing with the process to limit any issues that may appear."
         />
+        <div
+          style={{
+            zIndex: 0,
+            position: "relative",
+            top: "-30vh",
+            left: "30vw",
+          }}
+        >
+          <StickyNoteAnimator
+            animationData={truckoutline}
+            stickyNoteColor={"Pink"}
+            randomPostion={false}
+            loop={true}
+          />
+        </div>
 
         <div className="w-full max-w-screen-xl px-4 mx-auto mt-6 sm:px-8">
           <ParallelogramTextbox
@@ -122,6 +166,22 @@ export function BigCreekPage() {
             skew="5deg"
             color="var(--color-offwhite)"
             className="w-full max-w-5xl"
+          />
+        </div>
+
+        <div
+          style={{
+            zIndex: 0,
+            position: "relative",
+            top: "0vh",
+            left: "-5vw",
+          }}
+        >
+          <StickyNoteAnimator
+            animationData={coloredTruck}
+            stickyNoteColor={"Orange"}
+            randomPostion={false}
+            loop={true}
           />
         </div>
 
