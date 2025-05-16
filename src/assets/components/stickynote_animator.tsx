@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import lottie from "lottie-web/build/player/lottie_light"; // <- lighter version
+import lottie from "lottie-web/build/player/lottie_light";
 import Orange from "../images/stickyNoteOrange.png";
 import Green from "../images/stickyNoteGreen.png";
 import Pink from "../images/stickyNotePink.png";

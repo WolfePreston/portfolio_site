@@ -56,7 +56,9 @@ export function BigCreekPage() {
           />
         </div>
 
-        <Summary summary="Currently supervisors must go in weekly online to input hours for their employees. In this process they need to first create the job site (location) by adding tasks that were completed, add any equipment, and then open the timesheet page where they can utilize the job site created to assign hours to employees. The current process’ design is made to minimize mistakes so that the accounting department will be able to finalize the process in a timely manner." />
+        <div className="z-10">
+          <Summary summary="Currently supervisors must go in weekly online to input hours for their employees. In this process they need to first create the job site (location) by adding tasks that were completed, add any equipment, and then open the timesheet page where they can utilize the job site created to assign hours to employees. The current process’ design is made to minimize mistakes so that the accounting department will be able to finalize the process in a timely manner." />
+        </div>
 
         <div
           style={{ zIndex: 0, position: "relative", top: "0vh", left: "0vw" }}
@@ -68,43 +70,49 @@ export function BigCreekPage() {
             loop={true}
           />
         </div>
-        <UserComic
-          userDescription="-Construction Supervisor"
-          description="“I need a quick method of inputting hours and tracking my employees that does not force me to have an internet connection when I am ready to do so.”"
-          image={bigCreekComic}
-          user="Adults whose age can range anywhere between 30-60 years old, who have experience in the field and are looking to quickly input hours."
-          product="A mobile application that is meant to improve time being used to input hours by combining 2 different sections in the Big Creek Construction employee site and allowing users to fill hours in one place accurately."
-          solution="Show users locations (job sites) with their employees below and direct them with a color indicator and informational tool tips utilizing flutters built in features."
-          businessGoal="Effectively condense sections in the employee site into one so inputting hours is in a simple format, errors are mitigated, and its available on a mobile platform."
-        />
+        <div className="z-10">
+          <UserComic
+            userDescription="-Construction Supervisor"
+            description="“I need a quick method of inputting hours and tracking my employees that does not force me to have an internet connection when I am ready to do so.”"
+            image={bigCreekComic}
+            user="Adults whose age can range anywhere between 30-60 years old, who have experience in the field and are looking to quickly input hours."
+            product="A mobile application that is meant to improve time being used to input hours by combining 2 different sections in the Big Creek Construction employee site and allowing users to fill hours in one place accurately."
+            solution="Show users locations (job sites) with their employees below and direct them with a color indicator and informational tool tips utilizing flutters built in features."
+            businessGoal="Effectively condense sections in the employee site into one so inputting hours is in a simple format, errors are mitigated, and its available on a mobile platform."
+          />
+        </div>
 
-        <ScrollInImage
-          src={stickynotes}
-          alt="sticky notes image"
-          border={true}
-          title="Combining Web Pages, but keeping separating with components"
-          description="below are some of the solutions I implemented to streamline the website into a mobile platform"
-        />
+        <div className="z-10">
+          <ScrollInImage
+            src={stickynotes}
+            alt="sticky notes image"
+            border={true}
+            title="Combining Web Pages, but keeping separating with components"
+            description="below are some of the solutions I implemented to streamline the website into a mobile platform"
+          />
+        </div>
 
-        <JobEmployeeComponents
-          mainScreen={homescreen}
-          component={jobsiteCreation}
-          color="var(--color-lightGreen)"
-          negativeSkew={true}
-          skew="10deg"
-          title="Defining a Job Site"
-          description="Users can select a Job Site then view details and add tasks. This structure maintains the feel of the website by keeping relevant details at the user's attention."
-          imageStyle={{
-            width: "16rem",
-            borderRadius: "1rem",
-            transform: `skewX(-10deg) translate(6rem, -1rem)`,
-          }}
-          arrowStyle={{
-            position: "absolute",
-            transform: "translate(-1.5rem, -2rem)",
-          }}
-          bonusText="Users are guided with the yellow buttons, that indicate a required step or predicted next step"
-        />
+        <div className="z-10">
+          <JobEmployeeComponents
+            mainScreen={homescreen}
+            component={jobsiteCreation}
+            color="var(--color-lightGreen)"
+            negativeSkew={true}
+            skew="10deg"
+            title="Defining a Job Site"
+            description="Users can select a Job Site then view details and add tasks. This structure maintains the feel of the website by keeping relevant details at the user's attention."
+            imageStyle={{
+              width: "16rem",
+              borderRadius: "1rem",
+              transform: `skewX(-10deg) translate(6rem, -1rem)`,
+            }}
+            arrowStyle={{
+              position: "absolute",
+              transform: "translate(-1.5rem, -2rem)",
+            }}
+            bonusText="Users are guided with the yellow buttons, that indicate a required step or predicted next step"
+          />
+        </div>
 
         <JobEmployeeComponents
           mainScreen={homescreen}
@@ -133,14 +141,16 @@ export function BigCreekPage() {
           description="In the middle of production we questioned how we will manage data for offline users, and below are some of the steps the software engineers and I collaborated on to ensure users can work without a data connection."
         />
 
-        <Components
-          step1="Step 1"
-          description1="When first logging in, users are prompted with what downloaded data will look like and how it will function."
-          step2="Step 2"
-          description2="Users are prompted to download data when they are connected to the internet, and a progress bar is shown to indicate how long it will take."
-          step3="Step 3"
-          description3="Require users to download job sites before continuing with the process to limit any issues that may appear."
-        />
+        <div className="z-10">
+          <Components
+            step1="Step 1"
+            description1="When first logging in, users are prompted with what downloaded data will look like and how it will function."
+            step2="Step 2"
+            description2="Users are prompted to download data when they are connected to the internet, and a progress bar is shown to indicate how long it will take."
+            step3="Step 3"
+            description3="Require users to download job sites before continuing with the process to limit any issues that may appear."
+          />
+        </div>
         <div
           style={{
             zIndex: 0,
@@ -158,7 +168,7 @@ export function BigCreekPage() {
           />
         </div>
 
-        <div className="w-full max-w-screen-xl px-4 mx-auto mt-6 sm:px-8">
+        <div className="z-10 w-full max-w-screen-xl px-4 mx-auto mt-6 sm:px-8">
           <ParallelogramTextbox
             title="Other Revisions"
             description="Where should checkpoints be placed to save progress as employees input their hours? This question arose as the team began developing a working prototype. As a designer, I found this challenge to be a valuable learning experience. Moving forward on future projects, I realize the importance of anticipating the user’s journey—whether it ends in an error or a screen lacking appropriate data. Thinking ahead for such scenarios allows me to strategically place checkpoints where data can be saved or retrieved, ensuring a smoother and more seamless experience for the user."
@@ -187,7 +197,7 @@ export function BigCreekPage() {
           />
         </div>
 
-        <div className="flex flex-col items-center w-full max-w-screen-xl gap-8 px-4 mx-auto my-12 sm:px-8">
+        <div className="z-10 flex flex-col items-center w-full max-w-screen-xl gap-8 px-4 mx-auto my-12 sm:px-8">
           <div className="flex flex-row items-center justify-center gap-4 transform -translate-x-12">
             <img src={camera} className="w-24" />
             <h1 className="text-2xl font-bold text-[var(--color-black)]">
