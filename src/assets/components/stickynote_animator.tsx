@@ -32,7 +32,7 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
-  const randomDelay = Math.random() * 3000; // in ms
+  const randomDelay = Math.random() * 3000;
   const noteSize = 256;
 
   const getRandomPosition = () => {
@@ -82,7 +82,6 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
     };
   }, [isDragging]);
 
-  // Load Lottie animation on mount
   useEffect(() => {
     const timer = setTimeout(() => {
       if (lottieRef.current) {
@@ -98,7 +97,7 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
 
     return () => {
       clearTimeout(timer);
-      lottie.destroy(); // cleanup
+      lottie.destroy();
     };
   }, [animationData, loop, randomDelay]);
 

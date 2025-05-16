@@ -29,7 +29,7 @@ import { StickyNoteAnimator } from "../../assets/components/stickynote_animator"
 export function BigCreekPage() {
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="z-10 w-full max-w-screen-xl px-4 mx-auto sm:px-8">
+      <div className="w-full max-w-screen-xl px-4 mx-auto sm:px-8">
         <div
           style={{ zIndex: 0, position: "absolute", top: "20vh", left: "1vw" }}
         >
@@ -41,7 +41,7 @@ export function BigCreekPage() {
             loop={false}
           />
         </div>
-        <div className="z-10">
+        <div className="relative z-10">
           <TitleSection
             title="Big Creek Construction"
             description=" A mobile app that assists construction supervisors input hours while away from their office."
@@ -56,21 +56,19 @@ export function BigCreekPage() {
           />
         </div>
 
-        <div className="z-10">
+        <div className="relative z-10">
           <Summary summary="Currently supervisors must go in weekly online to input hours for their employees. In this process they need to first create the job site (location) by adding tasks that were completed, add any equipment, and then open the timesheet page where they can utilize the job site created to assign hours to employees. The current process’ design is made to minimize mistakes so that the accounting department will be able to finalize the process in a timely manner." />
         </div>
 
-        <div
-          style={{ zIndex: 0, position: "relative", top: "0vh", left: "0vw" }}
-        >
+        <div style={{ zIndex: 0, position: "relative" }}>
           <StickyNoteAnimator
             animationData={wheel}
-            stickyNoteColor={"Pink"}
+            stickyNoteColor={"Yellow"}
             randomPostion={false}
             loop={true}
           />
         </div>
-        <div className="z-10">
+        <div className="relative z-10">
           <UserComic
             userDescription="-Construction Supervisor"
             description="“I need a quick method of inputting hours and tracking my employees that does not force me to have an internet connection when I am ready to do so.”"
@@ -82,7 +80,7 @@ export function BigCreekPage() {
           />
         </div>
 
-        <div className="z-10">
+        <div className="relative z-10">
           <ScrollInImage
             src={stickynotes}
             alt="sticky notes image"
@@ -92,7 +90,7 @@ export function BigCreekPage() {
           />
         </div>
 
-        <div className="z-10">
+        <div className="relative z-10">
           <JobEmployeeComponents
             mainScreen={homescreen}
             component={jobsiteCreation}
@@ -141,7 +139,7 @@ export function BigCreekPage() {
           description="In the middle of production we questioned how we will manage data for offline users, and below are some of the steps the software engineers and I collaborated on to ensure users can work without a data connection."
         />
 
-        <div className="z-10">
+        <div className="relative z-10">
           <Components
             step1="Step 1"
             description1="When first logging in, users are prompted with what downloaded data will look like and how it will function."
@@ -168,7 +166,7 @@ export function BigCreekPage() {
           />
         </div>
 
-        <div className="z-10 w-full max-w-screen-xl px-4 mx-auto mt-6 sm:px-8">
+        <div className="relative z-10 w-full max-w-screen-xl px-4 mx-auto mt-6 sm:px-8">
           <ParallelogramTextbox
             title="Other Revisions"
             description="Where should checkpoints be placed to save progress as employees input their hours? This question arose as the team began developing a working prototype. As a designer, I found this challenge to be a valuable learning experience. Moving forward on future projects, I realize the importance of anticipating the user’s journey—whether it ends in an error or a screen lacking appropriate data. Thinking ahead for such scenarios allows me to strategically place checkpoints where data can be saved or retrieved, ensuring a smoother and more seamless experience for the user."
@@ -197,7 +195,7 @@ export function BigCreekPage() {
           />
         </div>
 
-        <div className="z-10 flex flex-col items-center w-full max-w-screen-xl gap-8 px-4 mx-auto my-12 sm:px-8">
+        <div className="relative z-10 flex flex-col items-center w-full max-w-screen-xl gap-8 px-4 mx-auto my-12 sm:px-8">
           <div className="flex flex-row items-center justify-center gap-4 transform -translate-x-12">
             <img src={camera} className="w-24" />
             <h1 className="text-2xl font-bold text-[var(--color-black)]">
