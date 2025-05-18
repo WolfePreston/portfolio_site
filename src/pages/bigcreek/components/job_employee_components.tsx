@@ -3,6 +3,8 @@ import arrow from "../../../assets/images/bigcreek/bigcreekarrow.png";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "../../../assets/hooks/screen_sizes";
+
 // import textBubble from "../../../assets/images/textBubble.png";
 
 type JobEmployeeComponentsProps = {
@@ -30,6 +32,7 @@ export const JobEmployeeComponents: React.FC<JobEmployeeComponentsProps> = ({
   bonusText,
   arrowStyle,
 }) => {
+  const specialCase = useMediaQuery("specialCaseJobEmployeeComponents");
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.2,
@@ -66,7 +69,7 @@ export const JobEmployeeComponents: React.FC<JobEmployeeComponentsProps> = ({
     <div
       ref={ref}
       className={`flex ${
-        isMobile ? "flex-col gap-8" : "flex-row gap-12"
+        specialCase ? "flex-col gap-8" : "flex-row gap-12"
       } items-center justify-center w-full max-w-screen-xl px-4 py-12 mx-auto`}
     >
       <motion.img
@@ -77,15 +80,16 @@ export const JobEmployeeComponents: React.FC<JobEmployeeComponentsProps> = ({
         animate={controls}
         className="rounded-lg max-w-[18rem] w-full"
       />
-
-      <motion.div
-        custom={1}
-        initial={{ opacity: 0, x: -100, y: -160 }}
-        animate={controls}
-        className="w-[5.5rem] z-10"
-      >
-        <img src={arrow} alt="arrow" style={arrowStyle} />
-      </motion.div>
+      {!isMobile && (
+        <motion.div
+          custom={1}
+          initial={{ opacity: 0, x: -100, y: -160 }}
+          animate={controls}
+          className="w-[5.5rem] z-10"
+        >
+          <img src={arrow} alt="arrow" style={arrowStyle} />
+        </motion.div>
+      )}
 
       <motion.div
         custom={2}
@@ -115,7 +119,7 @@ export const JobEmployeeComponents: React.FC<JobEmployeeComponentsProps> = ({
           duration: 0.4,
           ease: "backOut",
         }}
-        className="w-full max-w-[12rem] z-20"
+        className={isMobile ? "" : "w-100% max-w-[12rem] z-20"}
       >
         <ParallelogramTextbox
           title=""

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 const BREAKPOINTS = {
   sm: "(max-width: 768px)",
   lg: "(max-width: 1024px)",
+  specialCaseJobEmployeeComponents: "(max-width: 1040px)",
 };
 
 type BreakpointKey = keyof typeof BREAKPOINTS;

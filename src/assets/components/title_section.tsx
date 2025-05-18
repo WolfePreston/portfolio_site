@@ -28,7 +28,7 @@ export const TitleSection: React.FC<TitleProps> = ({
   const isMobile = useMediaQuery("sm");
 
   return (
-    <div className="flex flex-col items-center justify-start w-full max-w-screen-xl px-4 mx-auto mt-0 overflow-hidden sm:px-8">
+    <div className="flex flex-col items-center justify-start w-full max-w-screen-xl mx-auto mt-0 overflow-hidden sm:px-8">
       <div
         className={`flex w-full items-center justify-center gap-6 ${
           isMobile ? "flex-col" : "flex-row gap-12 items-start"

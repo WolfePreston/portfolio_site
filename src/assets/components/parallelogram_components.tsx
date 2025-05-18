@@ -1,3 +1,5 @@
+import { useMediaQuery } from "../hooks/screen_sizes";
+
 type ComponentsBoxProps = {
   title: string;
   description: string;
@@ -11,6 +13,7 @@ type ComponentsBoxProps = {
   negativeSkew?: boolean;
   imageStyle?: React.CSSProperties;
   color: string;
+  column?: boolean;
 };
 
 export const ParallelogramComponents: React.FC<ComponentsBoxProps> = ({
@@ -23,17 +26,23 @@ export const ParallelogramComponents: React.FC<ComponentsBoxProps> = ({
   image2,
   image3,
   image4,
-
+  column = false,
   negativeSkew,
   imageStyle,
   color,
 }) => {
+  const isMobile = useMediaQuery("sm");
   return (
     <div
-      className="flex flex-row items-start p-2 overflow-clip "
+      className={
+        column
+          ? "flex flex-col items-center justify-center"
+          : "flex flex-row items-start p-6 overflow-clip "
+      }
       style={{
         border: "2px solid var(--color-black)",
         boxShadow: "4px 4px var(--color-black)",
+        padding: isMobile ? "2%" : "1rem",
         width: width,
         height: height,
         backgroundColor: color,
@@ -65,12 +74,12 @@ export const ParallelogramComponents: React.FC<ComponentsBoxProps> = ({
           {description}
         </p>
       </div>
-      <div className="flex flex-row items-center w-full gap-2 overflow-hidden ">
-        <div className="flex flex-col items-center w-full gap-2">
+      <div className="flex flex-row items-center w-100% gap-2 overflow-hidden ">
+        <div className="flex flex-col items-center w-100% h-100% gap-2">
           <img src={image} style={imageStyle} />
           <img src={image2} style={imageStyle} />
         </div>
-        <div className="flex flex-col items-center w-full gap-2">
+        <div className="flex flex-col items-center w-100% h-100% gap-2">
           <img src={image3} style={imageStyle} />
           <img src={image4} style={imageStyle} />
         </div>

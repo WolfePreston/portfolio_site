@@ -113,7 +113,7 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
         left: randomPostion ? position.left : "20px",
         width: "16rem",
         height: "16rem",
-        zIndex: 1000,
+        zIndex: 1,
         cursor: isDragging ? "grabbing" : "grab",
       }}
     >

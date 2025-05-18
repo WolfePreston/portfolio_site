@@ -6,6 +6,7 @@ import offlineJosite from "../../../assets/images/bigcreek/offline_jobsites.png"
 import downloadingJobSite from "../../../assets/images/bigcreek/downloading_jobsite.png";
 import forceDownload from "../../../assets/images/bigcreek/jobSitesForceDownload.png";
 import { ParallelogramComponents } from "../../../assets/components/parallelogram_components";
+import { useMediaQuery } from "../../../assets/hooks/screen_sizes";
 
 type ComponentProps = {
   step1: string;
@@ -24,27 +25,28 @@ export const Components: React.FC<ComponentProps> = ({
   step3,
   description3,
 }) => {
+  const isMobile = useMediaQuery("sm");
   return (
-    <div className="flex flex-col items-center justify-center max-w-screen-lg w-full">
+    <div className="flex flex-col items-center justify-center m-auto">
       <div className="flex flex-col items-center justify-center gap-4">
         <ParallelogramComponents
           title={step1}
           description={description1}
-          width={"100%"}
-          height={"30rem"}
+          width={"90%"}
+          height={"100%"}
           skew={""}
           color={"var(--color-offwhite)"}
           image={offlineScreen}
           imageStyle={{
-            width: "16rem",
+            width: isMobile ? "100%" : "18rem",
             borderRadius: ".5rem",
           }}
         />
         <ParallelogramComponents
           title={step2}
           description={description2}
-          width={"100%"}
-          height={"30rem"}
+          width={"90%"}
+          height={"100%"}
           skew={""}
           color={"var(--color-offwhite)"}
           image={menuOffline}
@@ -52,34 +54,36 @@ export const Components: React.FC<ComponentProps> = ({
           image3={downloadingJobSite}
           image4={offlineJosite}
           imageStyle={{
-            width: "16rem",
+            width: isMobile ? "100%" : "18rem",
             borderRadius: ".5rem",
           }}
         />
         <ParallelogramComponents
           title={step3}
           description={description3}
-          width={"100%"}
-          height={"30rem"}
+          width={"90%"}
+          height={"100%"}
           skew={""}
           color={"var(--color-offwhite)"}
           image={forceDownload}
           imageStyle={{
-            width: "18rem",
+            width: isMobile ? "100%" : "18rem",
             borderRadius: ".5rem",
           }}
         />
       </div>
-      <img
-        src={box}
-        alt="image of components"
-        className="w-72"
-        style={{
-          position: "relative",
-          top: "-75rem",
-          left: "-40rem",
-        }}
-      />
+      {!isMobile && (
+        <img
+          src={box}
+          alt="image of components"
+          className="w-72"
+          style={{
+            position: "relative",
+            top: "-62rem",
+            left: "-36rem",
+          }}
+        />
+      )}
     </div>
   );
 };

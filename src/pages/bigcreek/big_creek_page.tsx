@@ -25,11 +25,13 @@ import truckoutline from "../../assets/lottie/truckoutline.json";
 import coloredTruck from "../../assets/lottie/colored_truck_animation.json";
 
 import { StickyNoteAnimator } from "../../assets/components/stickynote_animator";
+import { useMediaQuery } from "../../assets/hooks/screen_sizes";
 
 export function BigCreekPage() {
+  const isMobile = useMediaQuery("sm");
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="w-full max-w-screen-xl px-4 mx-auto sm:px-8">
+      <div className="items-center w-full max-w-screen-xl mx-auto ">
         <div
           style={{ zIndex: 0, position: "absolute", top: "20vh", left: "1vw" }}
         >
@@ -97,12 +99,16 @@ export function BigCreekPage() {
             color="var(--color-lightGreen)"
             negativeSkew={true}
             skew="10deg"
-            title="Defining a Job Site"
+            title="Add Job Site"
             description="Users can select a Job Site then view details and add tasks. This structure maintains the feel of the website by keeping relevant details at the user's attention."
             imageStyle={{
               width: "16rem",
-              borderRadius: "1rem",
-              transform: `skewX(-10deg) translate(6rem, -1rem)`,
+              borderRadius: "2rem",
+              padding: "1rem",
+              margin: "auto",
+              transform: isMobile
+                ? ""
+                : `skewX(-10deg)  translate(5rem, -1rem)`,
             }}
             arrowStyle={{
               position: "absolute",
@@ -118,11 +124,13 @@ export function BigCreekPage() {
           color="var(--color-lightGreen)"
           negativeSkew={false}
           skew="10deg"
-          title="Adding to Employee Cards"
+          title="Employee Cards"
           description="Employee cards are for the user to expand and input hours for each employee on the selected date. Adding Tasks or Equipment is a guided step after a start and end time has been established."
           imageStyle={{
             width: "16rem",
-            transform: `skewX(10deg) translate(5rem, -1rem)`,
+            transform: isMobile
+              ? "translate(5rem, -1rem)"
+              : `skewX(10deg) translate(5rem, -1rem)`,
           }}
           arrowStyle={{
             position: "absolute",
@@ -139,7 +147,7 @@ export function BigCreekPage() {
           description="In the middle of production we questioned how we will manage data for offline users, and below are some of the steps the software engineers and I collaborated on to ensure users can work without a data connection."
         />
 
-        <div className="relative z-10">
+        <div className="relative z-10 ">
           <Components
             step1="Step 1"
             description1="When first logging in, users are prompted with what downloaded data will look like and how it will function."
@@ -166,11 +174,11 @@ export function BigCreekPage() {
           />
         </div>
 
-        <div className="relative z-10 w-full max-w-screen-xl px-4 mx-auto mt-6 sm:px-8">
+        <div className="relative z-10 items-center justify-center mt-6">
           <ParallelogramTextbox
             title="Other Revisions"
             description="Where should checkpoints be placed to save progress as employees input their hours? This question arose as the team began developing a working prototype. As a designer, I found this challenge to be a valuable learning experience. Moving forward on future projects, I realize the importance of anticipating the user’s journey—whether it ends in an error or a screen lacking appropriate data. Thinking ahead for such scenarios allows me to strategically place checkpoints where data can be saved or retrieved, ensuring a smoother and more seamless experience for the user."
-            width="100%"
+            width="90%"
             height="auto"
             skew="5deg"
             color="var(--color-offwhite)"
@@ -180,10 +188,11 @@ export function BigCreekPage() {
 
         <div
           style={{
+            margin: isMobile ? "50%" : "",
             zIndex: 0,
             position: "relative",
-            top: "0vh",
-            left: "-5vw",
+            top: isMobile ? "-30vh" : "0vh",
+            left: isMobile ? "-10vw" : "-5vw",
           }}
         >
           <StickyNoteAnimator
@@ -196,7 +205,7 @@ export function BigCreekPage() {
         </div>
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-screen-xl gap-8 px-4 mx-auto my-12 sm:px-8">
-          <div className="flex flex-row items-center justify-center gap-4 transform -translate-x-12">
+          <div className="flex flex-row items-center justify-center gap-4 transform -translate-x-auto">
             <img src={camera} className="w-24" />
             <h1 className="text-2xl font-bold text-[var(--color-black)]">
               Big Picture
@@ -206,7 +215,7 @@ export function BigCreekPage() {
           <ParallelogramTextbox
             title="Expectations"
             description="This is a nuanced process that has a lot of tedious steps where users will need to input certain government required codes and tasks that were completed by specified employees and the app needed to have a smooth experience."
-            width="100%"
+            width="90%"
             height="auto"
             skew="10deg"
             negativeSkew={false}
@@ -217,7 +226,7 @@ export function BigCreekPage() {
           <ParallelogramTextbox
             title="Reality"
             description="While minimizing steps to create a smoother experience, the real time saving step will be downloading data and having it available for the user while offline and leaving hidden checkpoints within the process to save progress."
-            width="100%"
+            width="90%"
             height="auto"
             skew="10deg"
             negativeSkew={true}
@@ -228,7 +237,7 @@ export function BigCreekPage() {
           <ParallelogramTextbox
             title="Solutions"
             description="In order to work effectively and not lose any work, there is a force download that requires users to download all data for a job site (resulting in 10-100mb of data cached) allowing the application to store progress on hours input and quickly displaying data that will be needed to complete the process."
-            width="100%"
+            width="90%"
             height="auto"
             skew="10deg"
             negativeSkew={false}

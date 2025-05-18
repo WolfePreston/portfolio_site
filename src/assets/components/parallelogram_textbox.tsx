@@ -1,3 +1,5 @@
+import { useMediaQuery } from "../hooks/screen_sizes";
+
 type TextBoxProps = {
   title: string;
   description: string;
@@ -25,16 +27,22 @@ export const ParallelogramTextbox: React.FC<TextBoxProps> = ({
   color,
   className,
 }) => {
+  const isMobile = useMediaQuery("sm");
   return (
     <div
       className={className}
       style={{
         border: "2px solid var(--color-black)",
         boxShadow: "4px 4px var(--color-black)",
-        width: width,
+        width: isMobile ? "95%" : width,
         height: height,
         backgroundColor: color,
-        transform: negativeSkew ? `skewX(${skew})` : `skewX(-${skew})`,
+        margin: isMobile ? "auto" : "auto",
+        transform: isMobile
+          ? "skewX(0deg)"
+          : negativeSkew
+          ? `skewX(${skew})`
+          : `skewX(-${skew})`,
       }}
     >
       <h1
@@ -43,7 +51,11 @@ export const ParallelogramTextbox: React.FC<TextBoxProps> = ({
           fontWeight: "bold",
           color: "var(--color-black)",
           padding: "2rem",
-          transform: negativeSkew ? `skewX(-${skew})` : `skewX(${skew})`,
+          transform: isMobile
+            ? "skewX(0deg)"
+            : negativeSkew
+            ? `skewX(-${skew})`
+            : `skewX(${skew})`,
         }}
       >
         {title}
@@ -55,7 +67,11 @@ export const ParallelogramTextbox: React.FC<TextBoxProps> = ({
           color: "var(--color-black)",
           padding: "2rem",
           paddingTop: "0",
-          transform: negativeSkew ? `skewX(-${skew})` : `skewX(${skew})`,
+          transform: isMobile
+            ? "skewX(0deg)"
+            : negativeSkew
+            ? `skewX(-${skew})`
+            : `skewX(${skew})`,
         }}
       >
         {description}

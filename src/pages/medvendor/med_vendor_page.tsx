@@ -9,7 +9,9 @@ import row from "../../assets/images/medvendor/row.png";
 import row2 from "../../assets/images/medvendor/row2.png";
 import camera from "../../assets/images/medvendor/cameraRed.png";
 import bigCreekMockup from "../../assets/images/bigcreek/bigcreekmockup.png";
+import medVendorLottie2 from "../../assets/lottie/medvendor_2.json";
 
+import { StickyNoteAnimator } from "../../assets/components/stickynote_animator";
 import ScrollInImage from "../../assets/components/scroll_in_image";
 import { TitleSection } from "../../assets/components/title_section";
 import { Summary } from "../../assets/components/summary";
@@ -18,24 +20,41 @@ import { ParallelogramComponents } from "../../assets/components/parallelogram_c
 import { ParallelogramTextbox } from "../../assets/components/parallelogram_textbox";
 import { ProjectContainer } from "../home/components/project_container";
 import { Button } from "../../assets/components/button";
+import { useMediaQuery } from "../../assets/hooks/screen_sizes";
 
 export function MedVendorPage() {
+  const isMobile = useMediaQuery("sm");
   return (
     <div className="flex flex-col items-center justify-center w-full max-w-screen-xl px-4 mx-auto sm:px-8">
-      <TitleSection
-        title="MedVendor"
-        description="A mobile app connecting patients with medical facilities within their network."
-        Role="Sole UX/UI Designer"
-        Date="Sept. 2024"
-        Industry="Industry: Healthcare"
-        tools="Tools: Figma, Flutter, VS Code, Android Studio"
-        mockup={mockup}
-        badge={badge}
-        vector={vector}
-        primarycolor="var(--color-lightRed)"
-      />
+      <div className="relative z-10">
+        <TitleSection
+          title="MedVendor"
+          description="A mobile app connecting patients with medical facilities within their network."
+          Role="Sole UX/UI Designer"
+          Date="Sept. 2024"
+          Industry="Industry: Healthcare"
+          tools="Tools: Figma, Flutter, VS Code, Android Studio"
+          mockup={mockup}
+          badge={badge}
+          vector={vector}
+          primarycolor="var(--color-lightRed)"
+        />
+      </div>
+      <div
+        style={{ zIndex: 0, position: "absolute", top: "30vh", left: "10vw" }}
+      >
+        <StickyNoteAnimator
+          animationData={medVendorLottie2}
+          stickyNoteColor={"Yellow"}
+          Optionalstyle={{ marginLeft: "2rem" }}
+          randomPostion={false}
+          loop={false}
+        />
+      </div>
 
-      <Summary summary="A growing startup for medical facilities by streamlining operations and fostering connections with physicians in their area. This platform makes it easier for patients to find the care they need. Free to download, physicians can create an account to input patient needs—such as required medical attention, insurance details, and zip code—and instantly access a tailored list of medical facilities that match those criteria." />
+      <div className="relative z-10">
+        <Summary summary="A growing startup for medical facilities by streamlining operations and fostering connections with physicians in their area. This platform makes it easier for patients to find the care they need. Free to download, physicians can create an account to input patient needs—such as required medical attention, insurance details, and zip code—and instantly access a tailored list of medical facilities that match those criteria." />
+      </div>
 
       <UserComic
         description="“Where can I send a new patient for a complex medical operation, with their medical coverage, and near their home?”"
@@ -65,6 +84,7 @@ export function MedVendorPage() {
           color="var(--color-lightRed)"
           image={profileTitle}
           imageStyle={{ width: "100%" }}
+          column={isMobile ? true : false}
         />
 
         <ParallelogramComponents
@@ -77,6 +97,7 @@ export function MedVendorPage() {
           image={insuranceCard}
           image2={specialtyCard}
           imageStyle={{ width: "100%" }}
+          column={isMobile ? true : false}
         />
       </div>
 
@@ -88,17 +109,19 @@ export function MedVendorPage() {
         />
       </div>
 
-      <ParallelogramTextbox
-        title="Development past the first Release"
-        description="I believe this app has significant potential for growth, particularly in standardizing the information provided by facilities. For a first release, its usability is very straightforward. However, one improvement I’d like to see is an update to the search tab and its functionality. It was removed from the initial release due to backend bugs and confusion around the process of searching and filtering locations from the home screen. That said, incorporating a well-functioning search feature could greatly reduce the time needed to find a facility and enhance the overall user experience."
-        width="100%"
-        height="auto"
-        skew="5deg"
-        color="var(--color-offwhite)"
-        className="w-full max-w-5xl mx-auto mt-12"
-      />
+      <div className="relative z-10">
+        <ParallelogramTextbox
+          title="Development past the first Release"
+          description="I believe this app has significant potential for growth, particularly in standardizing the information provided by facilities. For a first release, its usability is very straightforward. However, one improvement I’d like to see is an update to the search tab and its functionality. It was removed from the initial release due to backend bugs and confusion around the process of searching and filtering locations from the home screen. That said, incorporating a well-functioning search feature could greatly reduce the time needed to find a facility and enhance the overall user experience."
+          width="100%"
+          height="auto"
+          skew="5deg"
+          color="var(--color-offwhite)"
+          className="w-full max-w-5xl mx-auto mt-12"
+        />
+      </div>
 
-      <div className="flex flex-col items-center w-full max-w-screen-xl gap-8 px-4 mx-auto my-12 sm:px-8">
+      <div className="relative z-10 flex flex-col items-center w-full max-w-screen-xl gap-8 px-4 mx-auto my-12 sm:px-8">
         <div className="flex flex-col flex-wrap items-center justify-center gap-4 md:flex-row">
           <img src={camera} className="w-24" />
           <h1 className="text-2xl font-bold text-[var(--color-black)]">

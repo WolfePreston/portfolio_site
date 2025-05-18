@@ -45,7 +45,7 @@ export const UserComic: React.FC<UserComicProps> = ({
                 color="var(--color-offwhite)"
                 className=""
               />
-              <p className="absolute top-[10rem] right-[1.5rem] text-lg font-bold text-[var(--color-black)] max-w-xs sm:max-w-md text-right">
+              <p className="absolute top-[80%] right-[2.5rem] p-2 text-lg font-bold text-[var(--color-black)] max-w-xs sm:max-w-md text-right">
                 {userDescription}
               </p>
             </div>
