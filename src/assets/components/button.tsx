@@ -26,12 +26,11 @@ export const Button = ({
         background: color,
         color: "var(--color-white)",
         border: "2px solid var(--color-black)",
-        boxShadow: "4px 4px var(--color-black)",
         borderRadius: "0",
         transform: negativeSkew ? `skewX(-${skew})` : `skewX(${skew})`,
         cursor: "pointer",
       }}
-      className="px-4 py-2 font-bold"
+      className="px-4 py-2 font-bold button-style"
       onClick={to ? () => navigate(to) : onClick}
     >
       <div

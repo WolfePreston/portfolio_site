@@ -40,15 +40,15 @@ export function LandingPage() {
             loop={false}
           />
         </div>
-        <div className="z-10 flex flex-col items-center mt-12 mb-4">
+
+        <div className="z-10 flex flex-col items-center mt-12 mb-4 ">
           <Link to={"/about"}>
             <img
               src={profile}
               alt="Profile"
-              className="object-cover w-32 h-32 rounded-full sm:w-40 sm:h-40"
+              className="object-cover w-32 h-32 rounded-full sm:w-40 sm:h-40 profile-style"
               style={{
                 border: "2px solid var(--color-black)",
-                boxShadow: "4px 4px var(--color-black)",
               }}
             />
           </Link>
@@ -62,7 +62,6 @@ export function LandingPage() {
             />
           </div>
         </div>
-
         <div className="grid items-center justify-center grid-cols-1 gap-16 md:grid-cols-2">
           <div className="flex flex-col items-center">
             <ProjectContainer
@@ -81,7 +80,6 @@ export function LandingPage() {
               />
             </div>
           </div>
-
           <div className="flex flex-col items-center">
             <ProjectContainer
               title="MedVendor"

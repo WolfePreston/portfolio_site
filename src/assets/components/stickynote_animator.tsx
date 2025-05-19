@@ -32,7 +32,6 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
-  const randomDelay = Math.random() * 3000;
   const noteSize = 256;
 
   const getRandomPosition = () => {
@@ -93,13 +92,13 @@ export const StickyNoteAnimator: React.FC<StickyNoteAnimatorProps> = ({
           animationData,
         });
       }
-    }, randomDelay);
+    });
 
     return () => {
       clearTimeout(timer);
       lottie.destroy();
     };
-  }, [animationData, loop, randomDelay]);
+  }, [animationData, loop]);
 
   const stickyNoteImage = noteImages[stickyNoteColor] || Yellow;
 

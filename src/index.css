@@ -14,16 +14,6 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   font-family: var(--font-sans);
-  background-color: var(--color-offwhite);
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 h1 {
@@ -31,10 +21,47 @@ h1 {
   line-height: 1.1;
 }
 
-button:hover {
-  border-color: #646cff;
+.button-style {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-black);
+  box-shadow: 4px 4px var(--color-black),
+    inset 3px 3px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  cursor: pointer;
+  scale: 1;
+  transition: box-shadow 0.2s ease-in-out, scale 0.3s ease-in-out;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.button-style:hover {
+  scale: 1.05;
+  box-shadow: 6px 6px var(--color-black),
+    inset 6px 6px 0 rgba(255, 255, 255, 0.2);
+}
+
+.profile-style {
+  transition: box-shadow 0.2s ease-in-out, scale 0.3s ease-in-out;
+  box-shadow: 3px 3px var(--color-black);
+  scale: 1;
+}
+
+.profile-style:hover {
+  box-shadow: 6px 6px var(--color-black);
+  scale: 1.05;
+}
+
+.navbar-button {
+  color: var(--color-black);
+  font-weight: 600;
+  font-size: medium;
+  transition: font-weight 0.2s ease-in-out;
+}
+
+.navbar-button:hover {
+  color: var(--color-lightRed);
+  cursor: pointer;
+}
+
+.navbar-button.active {
+  color: var(--color-red);
 }
