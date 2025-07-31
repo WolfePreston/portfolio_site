@@ -23,6 +23,7 @@ import cabin from "../../assets/lottie/cabin.json";
 import wheel from "../../assets/lottie/wheel.json";
 import truckoutline from "../../assets/lottie/truckoutline.json";
 import coloredTruck from "../../assets/lottie/colored_truck_animation.json";
+import autoFillWithLock from "../../assets/images/bigcreek/autolock.png";
 
 import { StickyNoteAnimator } from "../../assets/components/stickynote_animator";
 import { useMediaQuery } from "../../assets/hooks/screen_sizes";
@@ -139,6 +140,35 @@ export function BigCreekPage() {
           bonusText="Located below Job Sites I combined the pages together in a compact format to create an tighter flow between the two sections"
         />
 
+        <div className="p-8">
+          <h1
+            style={{
+              fontSize: "2rem",
+              fontWeight: "bold",
+              color: "var(--color-black)",
+              padding: "2rem",
+              textAlign: "center",
+            }}
+          >
+            Along the way I have added features to help quickly add hours
+          </h1>
+          <p
+            style={{
+              fontSize: "1rem",
+              fontWeight: "normal",
+              color: "var(--color-black)",
+              padding: "2rem",
+              paddingTop: "0",
+              textAlign: "center",
+            }}
+          >
+            Here is a look at the lock and auto-fill feature where users can
+            single tap a task item to lock the time they have input and
+            auto-fill will divide the remaining hours from the total into the
+            unlocked task items.
+          </p>
+          <img src={autoFillWithLock} className="rounded-lg" />
+        </div>
         <ScrollInImage
           src={offlineScreens}
           alt="offline user flow"
@@ -177,7 +207,7 @@ export function BigCreekPage() {
         <div className="relative z-10 items-center justify-center mt-6">
           <ParallelogramTextbox
             title="Other Revisions"
-            description="Where should checkpoints be placed to save progress as employees input their hours? This question arose as the team began developing a working prototype. As a designer, I found this challenge to be a valuable learning experience. Moving forward on future projects, I realize the importance of anticipating the user’s journey—whether it ends in an error or a screen lacking appropriate data. Thinking ahead for such scenarios allows me to strategically place checkpoints where data can be saved or retrieved, ensuring a smoother and more seamless experience for the user."
+            description="Where should checkpoints be placed to save progress as employees input their hours? This question arose as the team began developing a working prototype. As a designer, I found this challenge to be a valuable learning experience. Moving forward on future projects, I realize the importance of anticipating the user’s journey. Whether it ends in an error or a screen lacking appropriate data. Thinking ahead for such scenarios allows me to strategically place checkpoints where data can be saved or retrieved, ensuring a smoother and more seamless experience for the user."
             width="90%"
             height="auto"
             skew="5deg"

@@ -65,3 +65,21 @@ h1 {
 .navbar-button.active {
   color: var(--color-red);
 }
+
+.projectBigCreek {
+  background-image: url("../src/assets/images/bigcreek/bigcreekmockup.png");
+  transform: translate(26px, 14px);
+  overflow: hidden;
+  background-color: var(--color-offwhite);
+  width: 20rem;
+  height: 20rem;
+  background-size: cover;
+  transition: background-image 0.2s ease-in-out;
+}
+
+.projectBigCreek:hover {
+  background-image: url("../src/assets/images/bigcreek/bigcreekStyled.png");
+  translate: translate(20px, 15px);
+  transition: background-image 0.2s ease-in-out, translate 0.2s ease-in-out;
+  overflow: hidden;
+}

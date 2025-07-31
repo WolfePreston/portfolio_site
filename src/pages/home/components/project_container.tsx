@@ -58,7 +58,7 @@ export const ProjectContainer: React.FC<ProjectTypeProps> = ({
           {description}
         </div>
         <div
-          className="z-10 transition-transform duration-300 "
+          className="z-10 transition-transform duration-300 projectBigCreek"
           style={{
             overflow: "hidden",
             transform: isHovered
