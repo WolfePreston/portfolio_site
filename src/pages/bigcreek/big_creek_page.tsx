@@ -140,35 +140,6 @@ export function BigCreekPage() {
           bonusText="Located below Job Sites I combined the pages together in a compact format to create an tighter flow between the two sections"
         />
 
-        <div className="p-8">
-          <h1
-            style={{
-              fontSize: "2rem",
-              fontWeight: "bold",
-              color: "var(--color-black)",
-              padding: "2rem",
-              textAlign: "center",
-            }}
-          >
-            Along the way I have added features to help quickly add hours
-          </h1>
-          <p
-            style={{
-              fontSize: "1rem",
-              fontWeight: "normal",
-              color: "var(--color-black)",
-              padding: "2rem",
-              paddingTop: "0",
-              textAlign: "center",
-            }}
-          >
-            Here is a look at the lock and auto-fill feature where users can
-            single tap a task item to lock the time they have input and
-            auto-fill will divide the remaining hours from the total into the
-            unlocked task items.
-          </p>
-          <img src={autoFillWithLock} className="rounded-lg" />
-        </div>
         <ScrollInImage
           src={offlineScreens}
           alt="offline user flow"
@@ -232,6 +203,36 @@ export function BigCreekPage() {
             randomPostion={false}
             loop={true}
           />
+        </div>
+
+        <div className="p-8">
+          <h1
+            style={{
+              fontSize: "2rem",
+              fontWeight: "bold",
+              color: "var(--color-black)",
+              padding: "2rem",
+              textAlign: "center",
+            }}
+          >
+            Most Recent Features added
+          </h1>
+          <p
+            style={{
+              fontSize: "1rem",
+              fontWeight: "normal",
+              color: "var(--color-black)",
+              padding: "2rem",
+              paddingTop: "0",
+              textAlign: "center",
+            }}
+          >
+            Here is a look at the lock and auto-fill feature where users can
+            single tap a task item to lock the time they have input and
+            auto-fill will divide the remaining hours from the total into the
+            unlocked task items.
+          </p>
+          <img src={autoFillWithLock} className="rounded-lg" />
         </div>
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-screen-xl gap-8 px-4 mx-auto my-12 sm:px-8">
