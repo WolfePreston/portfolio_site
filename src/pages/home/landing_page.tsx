@@ -66,7 +66,7 @@ export function LandingPage() {
           <div className="flex flex-col items-center">
             <ProjectContainer
               title="Big Creek"
-              description="Mobile Application"
+              description="Timesheet Mobile Application"
               image={bigCreekMockup}
               to="/bigCreek"
             />
@@ -83,7 +83,7 @@ export function LandingPage() {
           <div className="flex flex-col items-center">
             <ProjectContainer
               title="MedVendor"
-              description="Mobile Application"
+              description="Medical Mobile Application"
               image={medVendorMockup}
               to="/medVendor"
             />
