@@ -27,6 +27,10 @@ import autoFillWithLock from "../../assets/images/bigcreek/autolock.png";
 
 import { StickyNoteAnimator } from "../../assets/components/stickynote_animator";
 import { useMediaQuery } from "../../assets/hooks/screen_sizes";
+import { Link } from "react-router-dom";
+
+import updates from "../../assets/images/updates.png";
+import updatesArrow from "../../assets/images/bigcreek/updates/bigcreekarrow.png";
 
 export function BigCreekPage() {
   const isMobile = useMediaQuery("sm");
@@ -56,6 +60,33 @@ export function BigCreekPage() {
             badge={badge}
             vector={vector}
             primarycolor="var(--color-darkGreen)"
+          />
+          <Link to={"/latest_updates_big_creek"}>
+            <img
+              src={updates}
+              alt="Profile"
+              className="object-cover w-32 h-32 rounded-full sm:w-40 sm:h-40 profile-style "
+              style={{
+                border: "2px solid var(--color-black)",
+                rotate: "-20deg",
+                position: "absolute",
+                zIndex: 30,
+                top: "37rem",
+                left: "-8rem",
+              }}
+            />
+          </Link>
+          <img
+            src={updatesArrow}
+            className="updatesArrow"
+            style={{
+              position: "absolute",
+              width: "10rem",
+              zIndex: 20,
+              top: "30rem",
+              left: "-1rem",
+              rotate: "-20deg",
+            }}
           />
         </div>
 

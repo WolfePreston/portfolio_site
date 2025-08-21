@@ -10,6 +10,8 @@ import strike from "../../assets/lottie/strike.json";
 import arrow from "../../assets/lottie/arrow.json";
 import bomb from "../../assets/lottie/bomb.json";
 
+import updates from "../../assets/images/updates.png";
+import updatesArrow from "../../assets/images/bigcreek/updates/bigcreekarrow.png";
 export function LandingPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
@@ -71,6 +73,32 @@ export function LandingPage() {
               to="/bigCreek"
             />
             <div className="p-4" style={{ transform: "rotate(6deg)" }}>
+              <Link to={"/latest_updates_big_creek"}>
+                <img
+                  src={updates}
+                  alt="Profile"
+                  className="object-cover w-32 h-32 rounded-full sm:w-40 sm:h-40 profile-style"
+                  style={{
+                    border: "2px solid var(--color-black)",
+                    rotate: "-20deg",
+                    position: "absolute",
+                    zIndex: 30,
+                    top: "0rem",
+                    left: "-20rem",
+                  }}
+                />
+              </Link>
+              <img
+                src={updatesArrow}
+                className="updatesArrow"
+                style={{
+                  position: "absolute",
+                  zIndex: 20,
+                  top: "0rem",
+                  left: "-10rem",
+                  rotate: "-20deg",
+                }}
+              />
               <Button
                 string="Big Creek"
                 color="var(--color-green)"

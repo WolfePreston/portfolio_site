@@ -83,3 +83,197 @@ h1 {
   transition: background-image 0.2s ease-in-out, translate 0.2s ease-in-out;
   overflow: hidden;
 }
+
+.updatesArrow {
+  animation: sway 2s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(0) rotate(-10deg);
+  }
+  50% {
+    transform: translateX(1rem) rotate(-15deg);
+  }
+  100% {
+    transform: translateX(0) rotate(-10deg);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.handSize {
+  width: 20%;
+  height: auto;
+}
+
+.handTap {
+  rotate: 120deg;
+}
+
+@keyframes moveHand {
+  0% {
+    opacity: 0;
+    rotate: 120deg;
+    top: 50%;
+    left: 75%;
+  }
+  5% {
+    opacity: 1;
+    rotate: 120deg;
+    top: 50%;
+    left: 75%;
+  }
+  97% {
+    opacity: 1;
+    rotate: 120deg;
+    top: 50%;
+    left: 20%;
+  }
+  100% {
+    opacity: 0;
+    rotate: 120deg;
+    top: 50%;
+    left: 20%;
+  }
+}
+
+.handTapMotion {
+  animation: moveHand 1.5s ease-in-out forwards;
+}
+
+@keyframes moveHandRemove {
+  0% {
+    opacity: 0;
+    rotate: 120deg;
+    top: 70%;
+    left: 75%;
+  }
+  5% {
+    opacity: 1;
+    rotate: 120deg;
+    top: 70%;
+    left: 75%;
+  }
+  97% {
+    opacity: 1;
+    rotate: 120deg;
+    top: 70%;
+    left: 20%;
+  }
+  100% {
+    opacity: 0;
+    rotate: 120deg;
+    top: 70%;
+    left: 20%;
+  }
+}
+
+.handTapMotionRemove {
+  animation: moveHandRemove 1.5s ease-in-out forwards;
+}
+
+@keyframes moveHandPin {
+  0% {
+    opacity: 0;
+    rotate: 120deg;
+    top: 28%;
+    left: 20%;
+  }
+  5% {
+    opacity: 1;
+    rotate: 120deg;
+    top: 28%;
+    left: 20%;
+  }
+  60% {
+    opacity: 1;
+    rotate: 120deg;
+    top: 28%;
+    left: 60%;
+  }
+  80% {
+    opacity: 1;
+    rotate: 120deg;
+    top: 28%;
+    left: 20%;
+  }
+  100% {
+    opacity: 0;
+    rotate: 120deg;
+    top: 28%;
+    left: 20%;
+  }
+}
+
+.handTapMotionPin {
+  animation: moveHandPin 2s ease-in-out forwards;
+  opacity: 0;
+  animation-delay: 2s;
+}
+
+.imageTransition {
+  transition: opacity 0.4s ease;
+}
+
+.imageHidden {
+  opacity: 0;
+}
+.imageVisible {
+  opacity: 1;
+}
+
+.arrowButton {
+  cursor: pointer;
+}
+
+.popUpText {
+  transform-origin: center;
+  animation: popIn 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.popUpText--delay100 {
+  animation-delay: 100ms;
+}
+.popUpText--delay200 {
+  animation-delay: 200ms;
+}
+.popUpText--delay300 {
+  animation-delay: 300ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popUpText,
+  .popUpText--delay100,
+  .popUpText--delay200,
+  .popUpText--delay300 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.updatesTitle {
+  font-size: 6rem;
+  line-height: 0.85;
+  font-family: "WHOAA";
+  color: var(--color-white);
+}
+
+.updatesDescription {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--color-white);
+}
