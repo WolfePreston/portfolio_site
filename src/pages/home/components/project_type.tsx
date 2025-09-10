@@ -3,4 +3,5 @@ export interface ProjectTypeProps {
   description: string;
   image: string;
   to: string;
+  imageAdjustments?: React.CSSProperties;
 }

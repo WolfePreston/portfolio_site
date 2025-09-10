@@ -9,6 +9,7 @@ export const ProjectContainer: React.FC<ProjectTypeProps> = ({
   description,
   image,
   to,
+  imageAdjustments,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useMediaQuery("sm");
@@ -66,7 +67,11 @@ export const ProjectContainer: React.FC<ProjectTypeProps> = ({
               : "translate(20px, 15px)",
           }}
         >
-          <img src={image} alt={title} style={{ marginTop: "1rem" }} />
+          <img
+            src={image}
+            alt={title}
+            style={{ marginTop: "1rem", ...imageAdjustments }}
+          />
         </div>
         <ProjectSetup
           title={title}

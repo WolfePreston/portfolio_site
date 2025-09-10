@@ -70,8 +70,9 @@ export const Navigation: React.FC = () => {
                 {[
                   { title: "Home", to: "/portfolio_site" },
                   { title: "About Me", to: "/about" },
-                  { title: "Big Creek", to: "/bigCreek" },
+                  { title: "Timesheets", to: "/bigCreek" },
                   { title: "MedVendor", to: "/medVendor" },
+                  { title: "Inventory", to: "/bigCreekInventory" },
                 ].map((item, index) => (
                   <MobileNavigationLink
                     key={item.to}
@@ -106,8 +107,9 @@ export const Navigation: React.FC = () => {
             <div className="flex flex-row items-center justify-center px-4 space-x-8">
               <NavigationLink title="Home" to="/portfolio_site" />
               <NavigationLink title="About Me" to="/about" />
-              <NavigationLink title="Big Creek" to="/bigCreek" />
+              <NavigationLink title="TimeSheets" to="/bigCreek" />
               <NavigationLink title="MedVendor" to="/medVendor" />
+              <NavigationLink title="Inventory" to="/bigCreekInventory" />
             </div>
           </div>
         </nav>

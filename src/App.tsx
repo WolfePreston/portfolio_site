@@ -1,13 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import { LandingPage } from "../src/pages/home/landing_page";
 import { AboutPage } from "../src/pages/about/about_page";
-import { BigCreekPage } from "./pages/bigcreek/big_creek_page";
+import { BigCreekPage } from "./pages/bigcreek_timesheets/big_creek_page";
 import { MedVendorPage } from "./pages/medvendor/med_vendor_page";
 import { Navigation } from "../src/assets/components/navbar";
 import { Footer } from "../src/assets/components/footer";
 import { ScrollToTop } from "./assets/hooks/scroll_to_top";
-import LatestUpdatesBigCreek from "./pages/bigcreek/latest_updates_big_creek";
+import LatestUpdatesBigCreek from "./pages/bigcreek_timesheets/latest_updates_big_creek";
 import { useLocation } from "react-router-dom";
+import { BigCreekInventoryPage } from "./pages/bigcreek_inventory/big_creek_inventory_page";
 
 function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
@@ -34,6 +35,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/bigCreek" element={<BigCreekPage />} />
         <Route path="/medVendor" element={<MedVendorPage />} />
+        <Route path="/bigCreekInventory" element={<BigCreekInventoryPage />} />
         <Route
           path="/latest_updates_big_creek"
           element={<LatestUpdatesBigCreek />}

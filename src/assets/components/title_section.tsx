@@ -1,3 +1,4 @@
+import { text } from "framer-motion/client";
 import { useMediaQuery } from "../../assets/hooks/screen_sizes";
 
 type TitleProps = {
@@ -11,6 +12,7 @@ type TitleProps = {
   badge: string;
   vector: string;
   primarycolor: string;
+  textColor?: string;
 };
 
 export const TitleSection: React.FC<TitleProps> = ({
@@ -24,6 +26,7 @@ export const TitleSection: React.FC<TitleProps> = ({
   badge,
   vector,
   primarycolor,
+  textColor,
 }) => {
   const isMobile = useMediaQuery("sm");
 
@@ -53,21 +56,38 @@ export const TitleSection: React.FC<TitleProps> = ({
             }}
           >
             {title}
-            <p className="text-base font-normal">{Date}</p>
+            <p
+              className="text-base font-normal"
+              style={textColor ? { color: textColor } : {}}
+            >
+              {Date}
+            </p>
           </h1>
 
-          <p className="p-4 text-base font-bold text-[var(--color-offwhite)]">
+          <p
+            className="p-4 text-base font-bold text-[var(--color-offwhite)]"
+            style={textColor ? { color: textColor } : {}}
+          >
             {description}
           </p>
 
           <div className="flex flex-col justify-center p-6 space-y-2">
-            <h2 className="text-2xl font-bold text-[var(--color-offwhite)]">
+            <h2
+              className="text-2xl font-bold text-[var(--color-offwhite)]"
+              style={textColor ? { color: textColor } : {}}
+            >
               {Role}
             </h2>
-            <p className="text-sm font-bold text-[var(--color-offwhite)]">
+            <p
+              className="text-sm font-bold text-[var(--color-offwhite)]"
+              style={textColor ? { color: textColor } : {}}
+            >
               {Industry}
             </p>
-            <p className="text-sm font-bold text-[var(--color-offwhite)]">
+            <p
+              className="text-sm font-bold text-[var(--color-offwhite)]"
+              style={textColor ? { color: textColor } : {}}
+            >
               {tools}
             </p>
           </div>

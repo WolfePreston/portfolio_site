@@ -10,6 +10,7 @@ import row2 from "../../assets/images/medvendor/row2.png";
 import camera from "../../assets/images/medvendor/cameraRed.png";
 import bigCreekMockup from "../../assets/images/bigcreek/bigcreekmockup.png";
 import medVendorLottie2 from "../../assets/lottie/medvendor_2.json";
+import bigCreekInventoryThumbnail from "../../assets/images/bigcreek/inventory/thumbnail.png";
 
 import { StickyNoteAnimator } from "../../assets/components/stickynote_animator";
 import ScrollInImage from "../../assets/components/scroll_in_image";
@@ -166,21 +167,45 @@ export function MedVendorPage() {
         />
       </div>
 
-      <div className="flex flex-col items-center justify-center mb-10">
-        <ProjectContainer
-          title="Big Creek"
-          description="Mobile Application"
-          image={bigCreekMockup}
-          to="/bigCreek"
-        />
-        <div style={{ transform: "rotate(6deg)" }} className="p-4">
-          <Button
-            string="Big Creek"
-            color="var(--color-green)"
+      <div className="grid items-center justify-center grid-cols-1 gap-16 md:grid-cols-2 pt-12">
+        <div className="flex flex-col items-center justify-center mb-10">
+          <ProjectContainer
+            title="Big Creek"
+            description=" Time Sheets Mobile Application"
+            image={bigCreekMockup}
             to="/bigCreek"
-            skew={"10deg"}
-            negativeSkew={true}
           />
+          <div style={{ transform: "rotate(6deg)" }} className="p-4">
+            <Button
+              string="Big Creek"
+              color="var(--color-green)"
+              to="/bigCreek"
+              skew={"10deg"}
+              negativeSkew={true}
+            />
+          </div>
+        </div>
+        <div className="flex flex-col items-center mb-10">
+          <ProjectContainer
+            title="Big Creek Inventory"
+            description="Inventory Mobile Application"
+            image={bigCreekInventoryThumbnail}
+            to="/bigCreekInventory"
+            imageAdjustments={{
+              width: "30rem",
+              paddingTop: "1rem",
+              paddingInline: "3rem",
+            }}
+          />
+          <div className="p-4" style={{ transform: "rotate(-8deg)" }}>
+            <Button
+              string="Big Creek Inventory"
+              color="var(--color-lightRed)"
+              to="/bigCreekInventory"
+              skew={"20deg"}
+              negativeSkew={true}
+            />
+          </div>
         </div>
       </div>
     </div>
